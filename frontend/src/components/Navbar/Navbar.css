@@ -312,3 +312,16 @@
     width: 92%;
   }
 }
+.brand-icon img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  display: block;
+}
+.navbar-feature-button {
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  cursor: pointer;
+  padding: 0;
+}

@@ -1,0 +1,1362 @@
+/* ========================================= */
+/* JEE MAIN PAGE */
+/* ========================================= */
+
+.jee-main-page {
+
+  min-height: 100vh;
+
+  padding:
+    110px 20px 70px;
+
+  background:
+    radial-gradient(
+      circle at 20% 10%,
+      rgba(59,130,246,0.12),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 80% 30%,
+      rgba(14,165,233,0.10),
+      transparent 28%
+    ),
+    #050816;
+
+  color: #e2e8f0;
+
+}
+
+
+.jee-main-container {
+
+  width: 100%;
+
+  max-width: 850px;
+
+  margin: 0 auto;
+
+}
+
+
+/* ========================================= */
+/* HEADER */
+/* ========================================= */
+
+.jee-badge {
+
+  width: fit-content;
+
+  padding:
+    7px 13px;
+
+  border-radius: 999px;
+
+  background:
+    rgba(59,130,246,0.10);
+
+  border:
+    1px solid
+    rgba(96,165,250,0.18);
+
+  color: #93c5fd;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+}
+
+
+.jee-main-container > h1 {
+
+  margin:
+    18px 0 10px;
+
+  font-size: 42px;
+
+  line-height: 1.1;
+
+  font-weight: 800;
+
+  letter-spacing: -1.5px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #ffffff,
+      #93c5fd
+    );
+
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+}
+
+
+.jee-main-container > p {
+
+  max-width: 650px;
+
+  margin:
+    0 0 35px;
+
+  color: #94a3b8;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+
+}
+
+
+/* ========================================= */
+/* FORM CARD */
+/* ========================================= */
+
+.jee-form-card {
+
+  padding: 30px;
+
+  border-radius: 24px;
+
+  background:
+    rgba(15,23,42,0.84);
+
+  border:
+    1px solid
+    rgba(255,255,255,0.08);
+
+  box-shadow:
+    0 30px 80px
+    rgba(0,0,0,0.30);
+
+  backdrop-filter:
+    blur(20px);
+
+}
+
+
+/* ========================================= */
+/* FORM HEADER */
+/* ========================================= */
+
+.jee-form-header {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding-bottom: 25px;
+
+  margin-bottom: 25px;
+
+  border-bottom:
+    1px solid
+    rgba(255,255,255,0.06);
+
+}
+
+
+.jee-form-header h2 {
+
+  margin:
+    0 0 7px;
+
+  color: #f8fafc;
+
+  font-size: 21px;
+
+}
+
+
+.jee-form-header p {
+
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 12px;
+
+}
+
+
+/* ========================================= */
+/* TOTAL SCORE */
+/* ========================================= */
+
+.jee-total-score {
+
+  min-width: 120px;
+
+  padding: 14px;
+
+  border-radius: 15px;
+
+  text-align: center;
+
+  background:
+    rgba(59,130,246,0.08);
+
+  border:
+    1px solid
+    rgba(59,130,246,0.15);
+
+}
+
+
+.jee-total-score span {
+
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: #64748b;
+
+  font-size: 9px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+
+}
+
+
+.jee-total-score strong {
+
+  color: #93c5fd;
+
+  font-size: 25px;
+
+}
+
+
+.jee-total-score small {
+
+  color: #64748b;
+
+  font-size: 11px;
+
+}
+
+
+/* ========================================= */
+/* SECTION */
+/* ========================================= */
+
+.jee-section {
+
+  margin-bottom: 28px;
+
+}
+
+
+.jee-section-title {
+
+  margin-bottom: 15px;
+
+  color: #cbd5e1;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+}
+
+
+/* ========================================= */
+/* GRID */
+/* ========================================= */
+
+.jee-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 15px;
+
+}
+
+
+.jee-group {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+
+}
+
+
+.jee-group label {
+
+  color: #94a3b8;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+}
+
+
+.jee-group label span {
+
+  margin-left: 5px;
+
+  color: #475569;
+
+}
+
+
+.jee-group input,
+.jee-group select {
+
+  width: 100%;
+
+  height: 46px;
+
+  padding:
+    0 13px;
+
+  border:
+    1px solid
+    rgba(255,255,255,0.08);
+
+  border-radius: 12px;
+
+  outline: none;
+
+  background:
+    rgba(255,255,255,0.035);
+
+  color: #e2e8f0;
+
+  font-family: inherit;
+
+  font-size: 12px;
+
+  transition:
+    0.25s ease;
+
+}
+
+
+.jee-group input::placeholder {
+
+  color: #475569;
+
+}
+
+
+.jee-group select {
+
+  cursor: pointer;
+
+}
+
+
+.jee-group select option {
+
+  background: #0f172a;
+
+  color: white;
+
+}
+
+
+.jee-group input:focus,
+.jee-group select:focus {
+
+  border-color:
+    rgba(96,165,250,0.65);
+
+  background:
+    rgba(59,130,246,0.05);
+
+  box-shadow:
+    0 0 0 3px
+    rgba(59,130,246,0.08);
+
+}
+
+
+/* ========================================= */
+/* ERROR */
+/* ========================================= */
+
+.jee-error {
+
+  margin-bottom: 18px;
+
+  padding: 13px 15px;
+
+  border-radius: 12px;
+
+  background:
+    rgba(239,68,68,0.08);
+
+  border:
+    1px solid
+    rgba(239,68,68,0.15);
+
+  color: #fca5a5;
+
+  font-size: 12px;
+
+}
+
+
+/* ========================================= */
+/* SUBMIT */
+/* ========================================= */
+
+.jee-submit {
+
+  width: 100%;
+
+  height: 52px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 12px;
+
+  border: none;
+
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #0ea5e9
+    );
+
+  color: white;
+
+  font-family: inherit;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 12px 30px
+    rgba(37,99,235,0.20);
+
+  transition: 0.25s ease;
+
+}
+
+
+.jee-submit:hover:not(:disabled) {
+
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 18px 35px
+    rgba(37,99,235,0.30);
+
+}
+
+
+.jee-submit:disabled {
+
+  opacity: 0.7;
+
+  cursor: not-allowed;
+
+}
+
+
+/* ========================================= */
+/* SPINNER */
+/* ========================================= */
+
+.jee-spinner {
+
+  display: inline-block;
+
+  font-size: 18px;
+
+  animation:
+    jeeSpin 0.8s linear infinite;
+
+}
+
+
+@keyframes jeeSpin {
+
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+
+}
+
+
+/* ========================================= */
+/* DISCLAIMER */
+/* ========================================= */
+
+.jee-disclaimer {
+
+  display: flex;
+
+  gap: 10px;
+
+  margin-top: 16px;
+
+  padding: 12px;
+
+  border-radius: 12px;
+
+  background:
+    rgba(255,255,255,0.025);
+
+}
+
+
+.jee-disclaimer p {
+
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 10px;
+
+  line-height: 1.6;
+
+}
+
+
+/* ========================================= */
+/* RESULT */
+/* ========================================= */
+
+.jee-result-card {
+
+  padding: 30px;
+
+  border-radius: 24px;
+
+  background:
+    rgba(15,23,42,0.86);
+
+  border:
+    1px solid
+    rgba(255,255,255,0.08);
+
+  box-shadow:
+    0 30px 80px
+    rgba(0,0,0,0.30);
+
+  animation:
+    jeeResultAppear
+    0.55s ease both;
+
+}
+
+
+@keyframes jeeResultAppear {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+      translateY(30px)
+      scale(0.97);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+
+  }
+
+}
+
+
+/* ========================================= */
+/* RESULT TOP */
+/* ========================================= */
+
+.jee-result-top {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding-bottom: 25px;
+
+  border-bottom:
+    1px solid
+    rgba(255,255,255,0.06);
+
+}
+
+
+.jee-result-top > div:first-child span {
+
+  color: #60a5fa;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+
+}
+
+
+.jee-result-top h2 {
+
+  margin:
+    7px 0 0;
+
+  color: #f8fafc;
+
+  font-size: 20px;
+
+}
+
+
+.jee-result-score {
+
+  text-align: right;
+
+}
+
+
+.jee-result-score span {
+
+  display: block;
+
+  color: #64748b;
+
+  font-size: 9px;
+
+}
+
+
+.jee-result-score strong {
+
+  color: #93c5fd;
+
+  font-size: 24px;
+
+}
+
+
+.jee-result-score small {
+
+  color: #64748b;
+
+  font-size: 10px;
+
+}
+
+
+/* ========================================= */
+/* PERCENTILE */
+/* ========================================= */
+
+.jee-percentile {
+
+  padding:
+    32px 10px 20px;
+
+  text-align: center;
+
+}
+
+
+.jee-percentile span {
+
+  color: #64748b;
+
+  font-size: 11px;
+
+}
+
+
+.jee-percentile strong {
+
+  display: block;
+
+  margin-top: 7px;
+
+  color: #60a5fa;
+
+  font-size: 42px;
+
+  font-weight: 800;
+
+}
+
+
+.jee-percentile p {
+
+  margin: 2px 0 0;
+
+  color: #64748b;
+
+  font-size: 10px;
+
+}
+
+
+/* ========================================= */
+/* RANK */
+/* ========================================= */
+
+.jee-rank-main {
+
+  padding:
+    15px 10px 30px;
+
+  text-align: center;
+
+}
+
+
+.jee-rank-main > span {
+
+  color: #64748b;
+
+  font-size: 11px;
+
+}
+
+
+.jee-rank-main > strong {
+
+  display: block;
+
+  margin-top: 8px;
+
+  color: #93c5fd;
+
+  font-size: 36px;
+
+  font-weight: 800;
+
+}
+
+
+.jee-rank-main p {
+
+  margin:
+    10px 0 0;
+
+  color: #64748b;
+
+  font-size: 12px;
+
+}
+
+
+.jee-rank-main b {
+
+  color: #cbd5e1;
+
+}
+
+
+/* ========================================= */
+/* STATS */
+/* ========================================= */
+
+.jee-result-stats {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 12px;
+
+  margin-bottom: 25px;
+
+}
+
+
+.jee-result-stats > div {
+
+  padding: 15px;
+
+  border-radius: 14px;
+
+  background:
+    rgba(255,255,255,0.025);
+
+  text-align: center;
+
+}
+
+
+.jee-result-stats span {
+
+  display: block;
+
+  color: #475569;
+
+  font-size: 9px;
+
+}
+
+
+.jee-result-stats strong {
+
+  display: block;
+
+  margin-top: 5px;
+
+  color: #cbd5e1;
+
+  font-size: 12px;
+
+}
+
+
+/* ========================================= */
+/* CATEGORY */
+/* ========================================= */
+
+.jee-category-card {
+
+  padding: 25px;
+
+  border-radius: 22px;
+
+  border:
+    1px solid
+    rgba(96,165,250,0.15);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(37,99,235,0.08),
+      rgba(14,165,233,0.04)
+    );
+
+  animation:
+    jeeCategoryAppear
+    0.55s ease both;
+
+}
+
+
+.jee-category-header {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding-bottom: 18px;
+
+  border-bottom:
+    1px solid
+    rgba(255,255,255,0.06);
+
+}
+
+
+.jee-category-header span {
+
+  color: #60a5fa;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+
+}
+
+
+.jee-category-header h3 {
+
+  margin:
+    6px 0 0;
+
+  color: #e2e8f0;
+
+  font-size: 18px;
+
+}
+
+
+.jee-category-header > div:last-child {
+
+  width: 45px;
+
+  height: 45px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 13px;
+
+  background:
+    rgba(59,130,246,0.10);
+
+}
+
+
+/* ========================================= */
+/* CATEGORY MAIN */
+/* ========================================= */
+
+.jee-category-main {
+
+  padding:
+    25px 5px;
+
+  text-align: center;
+
+}
+
+
+.jee-category-main span {
+
+  color: #64748b;
+
+  font-size: 11px;
+
+}
+
+
+.jee-category-main strong {
+
+  display: block;
+
+  margin-top: 7px;
+
+  color: #60a5fa;
+
+  font-size: 31px;
+
+  font-weight: 800;
+
+}
+
+
+.jee-category-main p {
+
+  margin:
+    8px 0 0;
+
+  color: #64748b;
+
+  font-size: 12px;
+
+}
+
+
+.jee-category-main b {
+
+  color: #cbd5e1;
+
+}
+
+
+/* ========================================= */
+/* CATEGORY STATS */
+/* ========================================= */
+
+.jee-category-stats {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 10px;
+
+}
+
+
+.jee-category-stats > div {
+
+  padding: 13px;
+
+  border-radius: 12px;
+
+  background:
+    rgba(255,255,255,0.025);
+
+  text-align: center;
+
+}
+
+
+.jee-category-stats span {
+
+  display: block;
+
+  color: #475569;
+
+  font-size: 9px;
+
+}
+
+
+.jee-category-stats strong {
+
+  display: block;
+
+  margin-top: 5px;
+
+  color: #cbd5e1;
+
+  font-size: 12px;
+
+}
+
+
+@keyframes jeeCategoryAppear {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+      translateY(18px)
+      scale(0.98);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+
+  }
+
+}
+
+
+/* ========================================= */
+/* HISTORY */
+/* ========================================= */
+
+.jee-history {
+
+  margin-top: 25px;
+
+  padding-top: 25px;
+
+  border-top:
+    1px solid
+    rgba(255,255,255,0.06);
+
+}
+
+
+.jee-history h3 {
+
+  margin:
+    0 0 15px;
+
+  color: #cbd5e1;
+
+  font-size: 14px;
+
+}
+
+
+.jee-history-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 10px;
+
+}
+
+
+.jee-history-card {
+
+  padding: 15px 10px;
+
+  border-radius: 13px;
+
+  background:
+    rgba(255,255,255,0.025);
+
+  text-align: center;
+
+}
+
+
+.jee-history-card span {
+
+  display: block;
+
+  color: #64748b;
+
+  font-size: 10px;
+
+}
+
+
+.jee-history-card strong {
+
+  display: block;
+
+  margin-top: 5px;
+
+  color: #93c5fd;
+
+  font-size: 15px;
+
+}
+
+
+.jee-history-card small {
+
+  color: #475569;
+
+  font-size: 8px;
+
+}
+
+
+/* ========================================= */
+/* NOTE */
+/* ========================================= */
+
+.jee-result-note {
+
+  display: flex;
+
+  gap: 10px;
+
+  margin-top: 20px;
+
+  padding: 14px;
+
+  border-radius: 13px;
+
+  background:
+    rgba(59,130,246,0.05);
+
+  border:
+    1px solid
+    rgba(59,130,246,0.08);
+
+}
+
+
+.jee-result-note p {
+
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 10px;
+
+  line-height: 1.6;
+
+}
+
+
+/* ========================================= */
+/* RESET */
+/* ========================================= */
+
+.jee-reset {
+
+  width: 100%;
+
+  height: 50px;
+
+  margin-top: 18px;
+
+  border:
+    1px solid
+    rgba(255,255,255,0.10);
+
+  border-radius: 13px;
+
+  background:
+    rgba(255,255,255,0.04);
+
+  color: #94a3b8;
+
+  font-family: inherit;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.25s;
+
+}
+
+
+.jee-reset:hover {
+
+  background:
+    rgba(255,255,255,0.08);
+
+  color: white;
+
+  transform:
+    translateY(-2px);
+
+}
+
+
+/* ========================================= */
+/* MOBILE */
+/* ========================================= */
+
+@media (max-width: 700px) {
+
+  .jee-main-page {
+
+    padding:
+      90px 14px 50px;
+
+  }
+
+
+  .jee-main-container > h1 {
+
+    font-size: 32px;
+
+  }
+
+
+  .jee-form-card,
+  .jee-result-card {
+
+    padding: 20px;
+
+  }
+
+
+  .jee-form-header {
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+  }
+
+
+  .jee-total-score {
+
+    width: 100%;
+
+  }
+
+
+  .jee-grid {
+
+    grid-template-columns:
+      1fr;
+
+  }
+
+
+  .jee-result-top {
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+  }
+
+
+  .jee-result-score {
+
+    text-align: left;
+
+  }
+
+
+  .jee-percentile strong {
+
+    font-size: 34px;
+
+  }
+
+
+  .jee-rank-main > strong {
+
+    font-size: 29px;
+
+  }
+
+
+  .jee-result-stats {
+
+    grid-template-columns:
+      1fr;
+
+  }
+
+
+  .jee-history-grid {
+
+    grid-template-columns:
+      1fr;
+
+  }
+
+
+  .jee-category-card {
+
+    padding: 20px;
+
+  }
+
+
+  .jee-category-main strong {
+
+    font-size: 27px;
+
+  }
+
+}
