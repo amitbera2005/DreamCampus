@@ -7,6 +7,20 @@ import WBJEEPredictor from './pages/RankPredictor/WBJEE'
 import JEEMainPredictor from './pages/RankPredictor/JEEMain'
 import NEETPredictor from './pages/RankPredictor/NEET'
 
+import StudyMaterials from './pages/StudyMaterials/StudyMaterials'
+import WBJEEMaterials from './pages/StudyMaterials/WBJEE'
+import JEEMainMaterials from './pages/StudyMaterials/JEEMain'
+import NEETMaterials from './pages/StudyMaterials/NEET'
+
+/* ============================= */
+/* COMMON STUDY MATERIAL PAGES   */
+/* ============================= */
+
+import Physics from './pages/StudyMaterials/Physics'
+import Chemistry from './pages/StudyMaterials/Chemistry'
+import Mathematics from './pages/StudyMaterials/Mathematics'
+import Biology from './pages/StudyMaterials/Biology'
+
 import { useState } from 'react'
 
 import {
@@ -153,14 +167,75 @@ function ProtectedComponent({
 
 function App() {
 
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  /*
+   * =============================
+   * LOGIN STATE
+   * =============================
+   *
+   * Refresh korleo login thakbe.
+   */
+
+  const [isLoggedIn, setIsLoggedIn] = useState(() => {
+
+    return (
+      localStorage.getItem(
+        'dreamCampusStudent'
+      ) !== null
+    )
+
+  })
+
+
+  /*
+   * =============================
+   * STUDENT DATA
+   * =============================
+   *
+   * Refresh hole localStorage
+   * theke student data load hobe.
+   */
+
+  const [student, setStudent] = useState(() => {
+
+    try {
+
+      const savedStudent =
+        localStorage.getItem(
+          'dreamCampusStudent'
+        )
+
+      return savedStudent
+        ? JSON.parse(savedStudent)
+        : null
+
+    } catch {
+
+      return null
+
+    }
+
+  })
+
+
+  /*
+   * =============================
+   * LOGIN POPUP
+   * =============================
+   */
 
   const [showLogin, setShowLogin] = useState(false)
 
-  const [student, setStudent] = useState(null)
+
+  /*
+   * =============================
+   * PROFILE PICTURE
+   * =============================
+   */
 
   const [profilePic, setProfilePic] = useState(
-    localStorage.getItem('dreamCampusProfilePic') || null
+    localStorage.getItem(
+      'dreamCampusProfilePic'
+    ) || null
   )
 
 
@@ -170,11 +245,22 @@ function App() {
 
   const handleLogin = (studentData) => {
 
+    /*
+     * Student data browser-er
+     * localStorage-e save hobe.
+     */
+
+    localStorage.setItem(
+      'dreamCampusStudent',
+      JSON.stringify(studentData)
+    )
+
     setStudent(studentData)
 
     setIsLoggedIn(true)
 
     setShowLogin(false)
+
   }
 
 
@@ -184,9 +270,19 @@ function App() {
 
   const handleLogout = () => {
 
+    /*
+     * Logout korle saved student
+     * data remove hobe.
+     */
+
+    localStorage.removeItem(
+      'dreamCampusStudent'
+    )
+
     setStudent(null)
 
     setIsLoggedIn(false)
+
   }
 
 
@@ -332,12 +428,142 @@ function App() {
         <Route
           path="/study-materials"
           element={
-            <ProtectedPage
+            <ProtectedComponent
               isLoggedIn={isLoggedIn}
               onLogin={() => setShowLogin(true)}
               title="Study Materials"
-              description="Access your complete preparation materials."
-            />
+            >
+              <StudyMaterials />
+            </ProtectedComponent>
+          }
+        />
+
+
+        {/* ============================= */}
+        {/* WBJEE STUDY MATERIALS */}
+        {/* ============================= */}
+
+        <Route
+          path="/study-materials/wbjee"
+          element={
+            <ProtectedComponent
+              isLoggedIn={isLoggedIn}
+              onLogin={() => setShowLogin(true)}
+              title="WBJEE Study Materials"
+            >
+              <WBJEEMaterials />
+            </ProtectedComponent>
+          }
+        />
+
+
+        {/* ============================= */}
+        {/* JEE MAIN STUDY MATERIALS */}
+        {/* ============================= */}
+
+        <Route
+          path="/study-materials/jee-main"
+          element={
+            <ProtectedComponent
+              isLoggedIn={isLoggedIn}
+              onLogin={() => setShowLogin(true)}
+              title="JEE Main Study Materials"
+            >
+              <JEEMainMaterials />
+            </ProtectedComponent>
+          }
+        />
+
+
+        {/* ============================= */}
+        {/* NEET STUDY MATERIALS */}
+        {/* ============================= */}
+
+        <Route
+          path="/study-materials/neet"
+          element={
+            <ProtectedComponent
+              isLoggedIn={isLoggedIn}
+              onLogin={() => setShowLogin(true)}
+              title="NEET Study Materials"
+            >
+              <NEETMaterials />
+            </ProtectedComponent>
+          }
+        />
+
+
+        {/* ===================================== */}
+        {/* COMMON PHYSICS PAGE                  */}
+        {/* WBJEE + JEE MAIN + NEET              */}
+        {/* ===================================== */}
+
+        <Route
+          path="/study-materials/physics"
+          element={
+            <ProtectedComponent
+              isLoggedIn={isLoggedIn}
+              onLogin={() => setShowLogin(true)}
+              title="Physics"
+            >
+              <Physics />
+            </ProtectedComponent>
+          }
+        />
+
+
+        {/* ===================================== */}
+        {/* COMMON CHEMISTRY PAGE                */}
+        {/* WBJEE + JEE MAIN + NEET              */}
+        {/* ===================================== */}
+
+        <Route
+          path="/study-materials/chemistry"
+          element={
+            <ProtectedComponent
+              isLoggedIn={isLoggedIn}
+              onLogin={() => setShowLogin(true)}
+              title="Chemistry"
+            >
+              <Chemistry />
+            </ProtectedComponent>
+          }
+        />
+
+
+        {/* ===================================== */}
+        {/* COMMON MATHEMATICS PAGE              */}
+        {/* WBJEE + JEE MAIN                      */}
+        {/* ===================================== */}
+
+        <Route
+          path="/study-materials/mathematics"
+          element={
+            <ProtectedComponent
+              isLoggedIn={isLoggedIn}
+              onLogin={() => setShowLogin(true)}
+              title="Mathematics"
+            >
+              <Mathematics />
+            </ProtectedComponent>
+          }
+        />
+
+
+        {/* ===================================== */}
+        {/* NEET BIOLOGY PAGE                    */}
+        {/* ===================================== */}
+
+        <Route
+          path="/study-materials/biology"
+          element={
+            <ProtectedComponent
+              isLoggedIn={isLoggedIn}
+              onLogin={() => setShowLogin(true)}
+              title="Biology"
+            >
+              <Biology />
+            </ProtectedComponent>
           }
         />
 
