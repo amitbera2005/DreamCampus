@@ -1,0 +1,455 @@
+ /* ============================= */
+/* COLLEGE DETAILS POPUP */
+/* ============================= */
+
+.college-page {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 9998;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 20px;
+
+  background: rgba(2, 6, 23, 0.78);
+
+  backdrop-filter: blur(10px);
+
+  -webkit-backdrop-filter: blur(10px);
+
+  animation: collegeOverlayIn 0.25s ease;
+
+  overflow-y: auto;
+}
+
+
+/* ============================= */
+/* OVERLAY */
+/* ============================= */
+
+.college-overlay {
+  width: 100%;
+
+  min-height: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+
+/* ============================= */
+/* MODAL */
+/* ============================= */
+
+.college-modal {
+  position: relative;
+
+  width: min(520px, 100%);
+
+  padding: 35px;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  border-radius: 28px;
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(99, 102, 241, 0.16),
+      transparent 35%
+    ),
+    #0b1120;
+
+  box-shadow:
+    0 30px 100px rgba(0, 0, 0, 0.55);
+
+  animation: collegeModalIn 0.35s ease;
+}
+
+
+/* ============================= */
+/* CLOSE */
+/* ============================= */
+
+.college-close {
+  position: absolute;
+
+  top: 16px;
+
+  right: 18px;
+
+  width: 36px;
+
+  height: 36px;
+
+  border: 1px solid rgba(255, 255, 255, 0.10);
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.05);
+
+  color: #94a3b8;
+
+  font-size: 24px;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition: 0.25s;
+}
+
+
+.college-close:hover {
+  color: white;
+
+  background: rgba(255, 255, 255, 0.10);
+
+  transform: rotate(90deg);
+}
+
+
+/* ============================= */
+/* HEADER */
+/* ============================= */
+
+.college-header {
+  text-align: center;
+
+  margin-bottom: 28px;
+}
+
+
+.college-main-icon {
+  width: 62px;
+
+  height: 62px;
+
+  margin: 0 auto 12px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 18px;
+
+  background: rgba(99, 102, 241, 0.14);
+
+  font-size: 29px;
+
+  animation: collegeIconFloat 2s ease-in-out infinite;
+}
+
+
+.college-header > span {
+  display: block;
+
+  color: #818cf8;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  letter-spacing: 1.5px;
+}
+
+
+.college-header h2 {
+  margin: 7px 0 8px;
+
+  color: white;
+
+  font-size: 30px;
+
+  font-weight: 800;
+}
+
+
+.college-header p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 14px;
+}
+
+
+/* ============================= */
+/* EXAM OPTIONS */
+/* ============================= */
+
+.college-exam-options {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+
+/* ============================= */
+/* EXAM CARD */
+/* ============================= */
+
+.college-exam-card {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 16px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 17px;
+
+  background: rgba(255, 255, 255, 0.045);
+
+  color: white;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  font-family: inherit;
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+.college-exam-card:hover {
+  transform: translateX(5px);
+
+  border-color: rgba(129, 140, 248, 0.45);
+
+  background: rgba(255, 255, 255, 0.075);
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+
+/* ============================= */
+/* EXAM ICON */
+/* ============================= */
+
+.college-exam-icon {
+  width: 50px;
+
+  height: 50px;
+
+  min-width: 50px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 14px;
+
+  font-size: 24px;
+
+  transition: 0.25s;
+}
+
+
+.college-wbjee-icon {
+  background: rgba(59, 130, 246, 0.13);
+}
+
+
+.college-jee-icon {
+  background: rgba(168, 85, 247, 0.13);
+}
+
+
+.college-neet-icon {
+  background: rgba(16, 185, 129, 0.13);
+}
+
+
+.college-exam-card:hover .college-exam-icon {
+  transform: scale(1.1) rotate(-4deg);
+}
+
+
+/* ============================= */
+/* EXAM INFO */
+/* ============================= */
+
+.college-exam-info {
+  flex: 1;
+
+  min-width: 0;
+}
+
+
+.college-exam-info h3 {
+  margin: 0 0 4px;
+
+  color: white;
+
+  font-size: 17px;
+
+  font-weight: 700;
+}
+
+
+.college-exam-info p {
+  margin: 0 0 5px;
+
+  color: #64748b;
+
+  font-size: 12px;
+
+  line-height: 1.4;
+}
+
+
+.college-exam-info small {
+  color: #818cf8;
+
+  font-size: 10px;
+}
+
+
+/* ============================= */
+/* ARROW */
+/* ============================= */
+
+.college-arrow {
+  color: #818cf8;
+
+  font-size: 24px;
+
+  transition: 0.25s;
+}
+
+
+.college-exam-card:hover .college-arrow {
+  transform: translateX(5px);
+
+  color: #c084fc;
+}
+
+
+/* ============================= */
+/* FOOTER */
+/* ============================= */
+
+.college-footer {
+  margin-top: 22px;
+
+  text-align: center;
+
+  color: #475569;
+
+  font-size: 11px;
+}
+
+
+/* ============================= */
+/* ANIMATIONS */
+/* ============================= */
+
+@keyframes collegeOverlayIn {
+
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+
+}
+
+
+@keyframes collegeModalIn {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(25px)
+      scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+
+}
+
+
+@keyframes collegeIconFloat {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+
+}
+
+
+/* ============================= */
+/* MOBILE */
+/* ============================= */
+
+@media (max-width: 600px) {
+
+  .college-modal {
+    padding: 28px 20px;
+
+    border-radius: 23px;
+  }
+
+
+  .college-header h2 {
+    font-size: 26px;
+  }
+
+
+  .college-exam-card {
+    padding: 14px;
+  }
+
+
+  .college-exam-icon {
+    width: 45px;
+
+    height: 45px;
+
+    min-width: 45px;
+
+    font-size: 21px;
+  }
+
+}

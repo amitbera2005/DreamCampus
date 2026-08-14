@@ -30,6 +30,7 @@ import PreviousYearQuestions
 
 import PYQExam
   from './pages/PreviousYearQuestions/PYQExam'
+  
 
 import { useState } from 'react'
 
@@ -49,6 +50,19 @@ import Profile from './pages/Profile/Profile'
 import AIDashboard
   from './pages/AIDashboard/AIDashboard'
 
+/* ============================= */
+/* COLLEGE DETAILS               */
+/* ============================= */
+
+import CollegeDetails
+  from './pages/CollegeDetails/CollegeDetails'
+
+import WBJEEColleges
+  from './pages/CollegeDetails/WBJEE/WBJEEColleges'
+
+import CollegePage
+  from './pages/CollegeDetails/CollegePage/CollegePage'
+
 
 /* ============================= */
 /*     PROTECTED FEATURE PAGE    */
@@ -64,6 +78,7 @@ function ProtectedPage({
   const navigate = useNavigate()
 
   if (!isLoggedIn) {
+
     return (
       <main className="protected-page">
 
@@ -99,6 +114,7 @@ function ProtectedPage({
   }
 
   return (
+
     <main className="feature-page">
 
       <div className="feature-page-content">
@@ -136,6 +152,7 @@ function ProtectedComponent({
   const navigate = useNavigate()
 
   if (!isLoggedIn) {
+
     return (
       <main className="protected-page">
 
@@ -246,22 +263,21 @@ function App() {
    */
 
   const [profilePic, setProfilePic] = useState(
+
     localStorage.getItem(
       'dreamCampusProfilePic'
     ) || null
+
   )
 
 
-  /* ============================= */
-  /* LOGIN */
-  /* ============================= */
+  /*
+   * =============================
+   * LOGIN
+   * =============================
+   */
 
   const handleLogin = (studentData) => {
-
-    /*
-     * Student data browser-er
-     * localStorage-e save hobe.
-     */
 
     localStorage.setItem(
       'dreamCampusStudent',
@@ -277,16 +293,13 @@ function App() {
   }
 
 
-  /* ============================= */
-  /* LOGOUT */
-  /* ============================= */
+  /*
+   * =============================
+   * LOGOUT
+   * =============================
+   */
 
   const handleLogout = () => {
-
-    /*
-     * Logout korle saved student
-     * data remove hobe.
-     */
 
     localStorage.removeItem(
       'dreamCampusStudent'
@@ -300,6 +313,7 @@ function App() {
 
 
   return (
+
     <BrowserRouter>
 
 
@@ -598,6 +612,7 @@ function App() {
           }
         />
 
+
         <Route
           path="/previous-year-questions/:exam"
           element={
@@ -636,14 +651,27 @@ function App() {
 
         <Route
           path="/college-details"
-          element={
-            <ProtectedPage
-              isLoggedIn={isLoggedIn}
-              onLogin={() => setShowLogin(true)}
-              title="College Details"
-              description="Explore engineering and medical colleges."
-            />
-          }
+          element={<CollegeDetails />}
+        />
+
+
+        {/* ============================= */}
+        {/* WBJEE COLLEGE LIST */}
+        {/* ============================= */}
+
+        <Route
+          path="/college-details/wbjee"
+          element={<WBJEEColleges />}
+        />
+
+
+        {/* ============================= */}
+        {/* INDIVIDUAL COLLEGE DETAILS */}
+        {/* ============================= */}
+
+        <Route
+          path="/college-details/wbjee/:collegeId"
+          element={<CollegePage />}
         />
 
 
@@ -654,6 +682,7 @@ function App() {
         <Route
           path="/profile"
           element={
+
             isLoggedIn ? (
 
               <Profile
@@ -671,6 +700,7 @@ function App() {
               />
 
             )
+
           }
         />
 
@@ -710,5 +740,6 @@ function App() {
     </BrowserRouter>
   )
 }
+
 
 export default App
