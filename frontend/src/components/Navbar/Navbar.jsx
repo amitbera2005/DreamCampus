@@ -86,12 +86,11 @@ function Navbar({
 
 
           <Link
-            to="/previous-papers"
+            to="/previous-year-questions"
             className="nav-link"
           >
             Previous Year Questions
           </Link>
-
 
           <Link
             to="/ai-dashboard"

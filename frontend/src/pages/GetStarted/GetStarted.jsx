@@ -36,7 +36,7 @@ function GetStarted() {
       description:
         'Practice previous year question papers.',
       icon: '📝',
-      path: '/previous-papers',
+      path: '/previous-year-questions',
     },
 
     {

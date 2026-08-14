@@ -11,6 +11,10 @@ const studyMaterialsRouter =
   const previousYearQuestionsRouter =
   require('./routes/previousYearQuestions')
 
+  const aiRouter =
+  require('./routes/ai')
+
+
 // ========================================
 // MIDDLEWARE
 // ========================================
@@ -33,7 +37,10 @@ app.use(
   previousYearQuestionsRouter
 )
 
-
+app.use(
+  '/api/ai',
+  aiRouter
+)
 // ========================================
 // POSTGRESQL CONNECTION
 // ========================================

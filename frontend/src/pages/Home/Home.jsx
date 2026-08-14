@@ -515,7 +515,7 @@ function Home() {
             {/* ============================= */}
 
             <Link
-              to="/previous-papers"
+              to="/previous-year-questions"
               className="feature-card"
             >
 

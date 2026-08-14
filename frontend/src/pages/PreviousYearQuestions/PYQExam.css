@@ -1,0 +1,1066 @@
+/* ============================= */
+/* PYQ EXAM PAGE */
+/* ============================= */
+
+.pyq-exam-page {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  background: rgba(2, 6, 23, 0.78);
+  backdrop-filter: blur(10px);
+
+  animation: pyqExamOverlayIn 0.25s ease;
+
+  overflow-y: auto;
+}
+
+
+/* ============================= */
+/* OVERLAY */
+/* ============================= */
+
+.pyq-exam-overlay {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* ============================= */
+/* MODAL */
+/* ============================= */
+
+.pyq-exam-modal {
+  position: relative;
+
+  width: min(650px, 100%);
+
+  max-height: 90vh;
+
+  padding: 35px;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  border-radius: 28px;
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(99, 102, 241, 0.16),
+      transparent 35%
+    ),
+    #0b1120;
+
+  box-shadow:
+    0 30px 100px rgba(0, 0, 0, 0.55);
+
+  overflow-y: auto;
+
+  animation: pyqExamModalIn 0.35s ease;
+}
+
+
+/* ============================= */
+/* CLOSE */
+/* ============================= */
+
+.pyq-exam-close {
+  position: absolute;
+
+  top: 16px;
+  right: 18px;
+
+  width: 36px;
+  height: 36px;
+
+  border: 1px solid rgba(255, 255, 255, 0.10);
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.05);
+
+  color: #94a3b8;
+
+  font-size: 24px;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition: 0.25s;
+}
+
+
+.pyq-exam-close:hover {
+  color: white;
+
+  background: rgba(255, 255, 255, 0.10);
+
+  transform: rotate(90deg);
+}
+
+
+/* ============================= */
+/* HEADER */
+/* ============================= */
+
+.pyq-exam-header {
+  text-align: center;
+
+  margin-bottom: 30px;
+}
+
+
+.pyq-exam-main-icon {
+  width: 62px;
+  height: 62px;
+
+  margin: 0 auto 12px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 18px;
+
+  background: rgba(99, 102, 241, 0.14);
+
+  font-size: 29px;
+
+  animation: pyqExamIconFloat 2s ease-in-out infinite;
+}
+
+
+.pyq-exam-header > span {
+  display: block;
+
+  color: #818cf8;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  letter-spacing: 1.5px;
+}
+
+
+.pyq-exam-header h2 {
+  margin: 7px 0 8px;
+
+  color: white;
+
+  font-size: 30px;
+
+  font-weight: 800;
+}
+
+
+.pyq-exam-header p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 14px;
+}
+
+
+/* ============================= */
+/* SECTION TITLE */
+/* ============================= */
+
+.pyq-section-title {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 18px;
+}
+
+
+.pyq-section-title > span {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: rgba(99, 102, 241, 0.12);
+
+  font-size: 20px;
+}
+
+
+.pyq-section-title h3 {
+  margin: 0 0 3px;
+
+  color: white;
+
+  font-size: 17px;
+
+  font-weight: 700;
+}
+
+
+.pyq-section-title p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 11px;
+}
+
+
+/* ============================= */
+/* YEAR SECTION */
+/* ============================= */
+
+.pyq-year-section {
+  animation: pyqContentIn 0.3s ease;
+}
+
+
+.pyq-year-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 12px;
+}
+
+
+/* ============================= */
+/* YEAR CARD */
+/* ============================= */
+
+.pyq-year-card {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  padding: 16px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 17px;
+
+  background: rgba(255, 255, 255, 0.045);
+
+  color: white;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  font-family: inherit;
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+.pyq-year-card:hover {
+  transform: translateY(-4px);
+
+  border-color:
+    rgba(129, 140, 248, 0.45);
+
+  background:
+    rgba(255, 255, 255, 0.075);
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+
+/* ============================= */
+/* YEAR ICON */
+/* ============================= */
+
+.pyq-year-icon {
+  width: 48px;
+  height: 48px;
+
+  min-width: 48px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 13px;
+
+  background:
+    rgba(99, 102, 241, 0.13);
+
+  font-size: 22px;
+
+  transition: 0.25s;
+}
+
+
+.pyq-year-card:hover .pyq-year-icon {
+  transform:
+    scale(1.08)
+    rotate(-4deg);
+}
+
+
+/* ============================= */
+/* YEAR INFO */
+/* ============================= */
+
+.pyq-year-info {
+  flex: 1;
+
+  min-width: 0;
+}
+
+
+.pyq-year-info h3 {
+  margin: 0 0 4px;
+
+  color: white;
+
+  font-size: 18px;
+
+  font-weight: 750;
+}
+
+
+.pyq-year-info p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 11px;
+}
+
+
+/* ============================= */
+/* YEAR ARROW */
+/* ============================= */
+
+.pyq-year-arrow {
+  color: #818cf8;
+
+  font-size: 22px;
+
+  transition: 0.25s;
+}
+
+
+.pyq-year-card:hover .pyq-year-arrow {
+  transform: translateX(5px);
+
+  color: #c084fc;
+}
+
+
+/* ============================= */
+/* BACK BUTTON */
+/* ============================= */
+
+.pyq-back-button {
+  margin-bottom: 18px;
+
+  padding: 8px 12px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 9px;
+
+  background: rgba(255, 255, 255, 0.04);
+
+  color: #94a3b8;
+
+  font-size: 12px;
+
+  font-family: inherit;
+
+  cursor: pointer;
+
+  transition: 0.25s;
+}
+
+
+.pyq-back-button:hover {
+  color: white;
+
+  border-color:
+    rgba(129, 140, 248, 0.35);
+
+  background:
+    rgba(255, 255, 255, 0.08);
+
+  transform: translateX(-3px);
+}
+
+
+/* ============================= */
+/* SELECTED YEAR */
+/* ============================= */
+
+.pyq-selected-year {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  margin-bottom: 25px;
+
+  padding: 15px;
+
+  border: 1px solid rgba(129, 140, 248, 0.15);
+
+  border-radius: 16px;
+
+  background:
+    rgba(99, 102, 241, 0.07);
+}
+
+
+.pyq-selected-year-icon {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 13px;
+
+  background:
+    rgba(99, 102, 241, 0.15);
+
+  font-size: 21px;
+}
+
+
+.pyq-selected-year span {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: #818cf8;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.5px;
+}
+
+
+.pyq-selected-year h3 {
+  margin: 0;
+
+  color: white;
+
+  font-size: 21px;
+
+  font-weight: 800;
+}
+
+
+/* ============================= */
+/* SUBJECT SECTION */
+/* ============================= */
+
+.pyq-subject-section {
+  animation: pyqContentIn 0.3s ease;
+}
+
+
+/* ============================= */
+/* SUBJECT LIST */
+/* ============================= */
+
+.pyq-subject-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+
+/* ============================= */
+/* SUBJECT CARD */
+/* ============================= */
+
+.pyq-subject-card {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 15px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 17px;
+
+  background:
+    rgba(255, 255, 255, 0.045);
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+.pyq-subject-card:hover {
+  transform: translateX(4px);
+
+  border-color:
+    rgba(129, 140, 248, 0.35);
+
+  background:
+    rgba(255, 255, 255, 0.065);
+
+  box-shadow:
+    0 10px 28px rgba(0, 0, 0, 0.22);
+}
+
+
+/* ============================= */
+/* SUBJECT ICON */
+/* ============================= */
+
+.pyq-subject-icon {
+  width: 50px;
+  height: 50px;
+
+  min-width: 50px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+
+  font-size: 23px;
+
+  transition: 0.25s;
+}
+
+
+.pyq-subject-card:hover .pyq-subject-icon {
+  transform:
+    scale(1.08)
+    rotate(-3deg);
+}
+
+
+/* ============================= */
+/* SUBJECT COLORS */
+/* ============================= */
+
+.pyq-subject-physics {
+  background:
+    rgba(59, 130, 246, 0.13);
+}
+
+
+.pyq-subject-chemistry {
+  background:
+    rgba(168, 85, 247, 0.13);
+}
+
+
+.pyq-subject-mathematics {
+  background:
+    rgba(245, 158, 11, 0.13);
+}
+
+
+.pyq-subject-biology {
+  background:
+    rgba(16, 185, 129, 0.13);
+}
+
+
+.pyq-subject-default {
+  background:
+    rgba(148, 163, 184, 0.12);
+}
+
+
+/* ============================= */
+/* SUBJECT INFO */
+/* ============================= */
+
+.pyq-subject-info {
+  flex: 1;
+
+  min-width: 0;
+}
+
+
+.pyq-subject-info h3 {
+  margin: 0 0 5px;
+
+  color: white;
+
+  font-size: 16px;
+
+  font-weight: 700;
+}
+
+
+.pyq-subject-info p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 11px;
+
+  line-height: 1.4;
+}
+
+
+/* ============================= */
+/* PDF ACTIONS */
+/* ============================= */
+
+.pyq-pdf-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  flex-shrink: 0;
+}
+
+
+/* ============================= */
+/* VIEW PDF */
+/* ============================= */
+
+.pyq-view-button {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-width: 78px;
+
+  padding: 9px 12px;
+
+  border: 1px solid
+    rgba(129, 140, 248, 0.25);
+
+  border-radius: 9px;
+
+  background:
+    rgba(99, 102, 241, 0.12);
+
+  color: #a5b4fc;
+
+  text-decoration: none;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  transition: 0.25s;
+}
+
+
+.pyq-view-button:hover {
+  background:
+    rgba(99, 102, 241, 0.22);
+
+  border-color:
+    rgba(129, 140, 248, 0.5);
+
+  color: white;
+
+  transform: translateY(-2px);
+}
+
+
+/* ============================= */
+/* DOWNLOAD BUTTON */
+/* ============================= */
+
+.pyq-download-button {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.08);
+
+  border-radius: 9px;
+
+  background:
+    rgba(255, 255, 255, 0.05);
+
+  color: #94a3b8;
+
+  text-decoration: none;
+
+  font-size: 17px;
+
+  transition: 0.25s;
+}
+
+
+.pyq-download-button:hover {
+  color: white;
+
+  background:
+    rgba(255, 255, 255, 0.10);
+
+  transform: translateY(-2px);
+}
+
+
+/* ============================= */
+/* NO PDF */
+/* ============================= */
+
+.pyq-no-pdf {
+  padding: 8px 10px;
+
+  border-radius: 8px;
+
+  background:
+    rgba(239, 68, 68, 0.08);
+
+  color: #f87171;
+
+  font-size: 10px;
+}
+
+
+/* ============================= */
+/* LOADING */
+/* ============================= */
+
+.pyq-exam-loading {
+  padding: 45px 20px;
+
+  text-align: center;
+
+  color: #64748b;
+}
+
+
+.pyq-spinner {
+  margin-bottom: 10px;
+
+  color: #818cf8;
+
+  font-size: 30px;
+
+  animation:
+    pyqSpinner 1s linear infinite;
+}
+
+
+.pyq-exam-loading p {
+  margin: 0;
+
+  font-size: 13px;
+}
+
+
+/* ============================= */
+/* NO DATA */
+/* ============================= */
+
+.pyq-no-data {
+  padding: 45px 20px;
+
+  text-align: center;
+}
+
+
+.pyq-no-data > div {
+  margin-bottom: 12px;
+
+  font-size: 42px;
+}
+
+
+.pyq-no-data h3 {
+  margin: 0 0 7px;
+
+  color: white;
+
+  font-size: 18px;
+}
+
+
+.pyq-no-data p {
+  max-width: 350px;
+
+  margin: 0 auto;
+
+  color: #64748b;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+}
+
+
+/* ============================= */
+/* FOOTER */
+/* ============================= */
+
+.pyq-exam-footer {
+  margin-top: 25px;
+
+  padding-top: 18px;
+
+  border-top:
+    1px solid rgba(255, 255, 255, 0.06);
+
+  text-align: center;
+
+  color: #475569;
+
+  font-size: 11px;
+}
+
+
+/* ============================= */
+/* ANIMATIONS */
+/* ============================= */
+
+@keyframes pyqExamOverlayIn {
+
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+
+}
+
+
+@keyframes pyqExamModalIn {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(25px)
+      scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+
+}
+
+
+@keyframes pyqExamIconFloat {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+
+}
+
+
+@keyframes pyqContentIn {
+
+  from {
+    opacity: 0;
+
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+
+}
+
+
+@keyframes pyqSpinner {
+
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+
+}
+
+
+/* ============================= */
+/* SCROLLBAR */
+/* ============================= */
+
+.pyq-exam-modal::-webkit-scrollbar {
+  width: 6px;
+}
+
+
+.pyq-exam-modal::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+
+.pyq-exam-modal::-webkit-scrollbar-thumb {
+  background:
+    rgba(129, 140, 248, 0.25);
+
+  border-radius: 10px;
+}
+
+
+.pyq-exam-modal::-webkit-scrollbar-thumb:hover {
+  background:
+    rgba(129, 140, 248, 0.45);
+}
+
+
+/* ============================= */
+/* MOBILE */
+/* ============================= */
+
+@media (max-width: 600px) {
+
+  .pyq-exam-page {
+    padding: 12px;
+  }
+
+
+  .pyq-exam-modal {
+    width: 100%;
+
+    max-height: 94vh;
+
+    padding: 28px 20px;
+
+    border-radius: 23px;
+  }
+
+
+  .pyq-exam-header h2 {
+    font-size: 26px;
+  }
+
+
+  .pyq-year-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .pyq-year-card {
+    padding: 14px;
+  }
+
+
+  .pyq-subject-card {
+    align-items: flex-start;
+
+    flex-wrap: wrap;
+
+    padding: 14px;
+  }
+
+
+  .pyq-subject-info {
+    padding-top: 3px;
+  }
+
+
+  .pyq-pdf-actions {
+    width: 100%;
+
+    margin-left: 64px;
+
+    margin-top: 3px;
+  }
+
+
+  .pyq-view-button {
+    flex: 1;
+  }
+
+}
+
+
+@media (max-width: 400px) {
+
+  .pyq-exam-modal {
+    padding: 25px 16px;
+  }
+
+
+  .pyq-exam-header h2 {
+    font-size: 23px;
+  }
+
+
+  .pyq-subject-icon {
+    width: 44px;
+    height: 44px;
+
+    min-width: 44px;
+  }
+
+
+  .pyq-pdf-actions {
+    margin-left: 58px;
+  }
+
+}

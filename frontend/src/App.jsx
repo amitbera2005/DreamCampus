@@ -21,6 +21,16 @@ import Chemistry from './pages/StudyMaterials/Chemistry'
 import Mathematics from './pages/StudyMaterials/Mathematics'
 import Biology from './pages/StudyMaterials/Biology'
 
+/* ============================= */
+/* PREVIOUS YEAR QUESTIONS       */
+/* ============================= */
+
+import PreviousYearQuestions
+  from './pages/PreviousYearQuestions/PreviousYearQuestions'
+
+import PYQExam
+  from './pages/PreviousYearQuestions/PYQExam'
+
 import { useState } from 'react'
 
 import {
@@ -35,6 +45,9 @@ import Navbar from './components/Navbar/Navbar'
 import Home from './pages/Home/Home'
 import Login from './pages/Login/Login'
 import Profile from './pages/Profile/Profile'
+
+import AIDashboard
+  from './pages/AIDashboard/AIDashboard'
 
 
 /* ============================= */
@@ -573,14 +586,28 @@ function App() {
         {/* ============================= */}
 
         <Route
-          path="/previous-papers"
+          path="/previous-year-questions"
           element={
-            <ProtectedPage
+            <ProtectedComponent
               isLoggedIn={isLoggedIn}
               onLogin={() => setShowLogin(true)}
               title="Previous Year Questions"
-              description="Practice previous year question papers."
-            />
+            >
+              <PreviousYearQuestions />
+            </ProtectedComponent>
+          }
+        />
+
+        <Route
+          path="/previous-year-questions/:exam"
+          element={
+            <ProtectedComponent
+              isLoggedIn={isLoggedIn}
+              onLogin={() => setShowLogin(true)}
+              title="Previous Year Questions"
+            >
+              <PYQExam />
+            </ProtectedComponent>
           }
         />
 
@@ -592,12 +619,13 @@ function App() {
         <Route
           path="/ai-dashboard"
           element={
-            <ProtectedPage
+            <ProtectedComponent
               isLoggedIn={isLoggedIn}
               onLogin={() => setShowLogin(true)}
               title="AI Dashboard"
-              description="Your AI-powered student dashboard."
-            />
+            >
+              <AIDashboard />
+            </ProtectedComponent>
           }
         />
 
