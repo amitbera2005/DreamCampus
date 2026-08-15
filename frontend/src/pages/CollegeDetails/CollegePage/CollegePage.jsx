@@ -1,276 +1,274 @@
+import { useMemo, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 
-import wbjeeColleges
-  from '../../../data/colleges/wbjeeColleges'
+import wbjeeColleges from '../../../data/colleges/wbjeeColleges'
 
 import './CollegePage.css'
 
 
 function CollegePage() {
-
+  const { collegeId } = useParams()
   const navigate = useNavigate()
 
-  const { collegeId } = useParams()
+  const college = useMemo(() => {
+    return wbjeeColleges.find(
+      (item) => String(item.id) === String(collegeId)
+    )
+  }, [collegeId])
 
 
-  const college = wbjeeColleges.find(
-    (item) =>
-      item.id === Number(collegeId)
-  )
+  const [selectedCategory, setSelectedCategory] =
+    useState('open')
 
 
-  /*
-   * =============================
-   * COLLEGE IMAGES
-   * =============================
-   */
+  const categories = [
+    {
+      key: 'open',
+      label: 'General',
+    },
+    {
+      key: 'obcA',
+      label: 'OBC-A',
+    },
+    {
+      key: 'obcB',
+      label: 'OBC-B',
+    },
+    {
+      key: 'sc',
+      label: 'SC',
+    },
+    {
+      key: 'st',
+      label: 'ST',
+    },
+    {
+      key: 'ews',
+      label: 'EWS',
+    },
+  ]
 
-  const collegeImages = {
-
-    1: '/colleges/jadavpur-university.jpg',
-
-    2: '/colleges/calcutta-university.jpg',
-
-    3: '/colleges/makaut.jpg',
-
-    4: '/colleges/hit.jpg',
-
-    5: '/colleges/heritage.jpg',
-
-    6: '/colleges/techno-india.jpg',
-
-    7: '/colleges/iem.jpg',
-
-    8: '/colleges/kgec.jpg',
-
-    9: '/colleges/jgec.jpg',
-
-    10: '/colleges/gcett.jpg',
-
-    11: '/colleges/gcett-serampore.jpg',
-
-    12: '/colleges/rcciit.jpg',
-
-    13: '/colleges/nsec.jpg',
-
-    14: '/colleges/msit.jpg',
-
-    15: '/colleges/techno-main.jpg',
-
-    16: '/colleges/aot.jpg',
-
-    17: '/colleges/narula.jpg',
-
-    18: '/colleges/halder.jpg',
-
-    19: '/colleges/bit.jpg',
-
-    20: '/colleges/fiem.jpg',
-
-  }
-
-
-  /*
-   * =============================
-   * COLLEGE NOT FOUND
-   * =============================
-   */
 
   if (!college) {
-
     return (
+      <main className="ju-page ju-not-found">
+        <div className="ju-not-found-card">
+          <div className="ju-not-found-icon">
+            !
+          </div>
 
-      <main className="college-page-error">
+          <h1>College Not Found</h1>
 
-        <div>
-
-          <h1>
-            College Not Found
-          </h1>
-
+          <p>
+            The requested college could not be found.
+          </p>
 
           <button
+            type="button"
             onClick={() =>
               navigate('/college-details/wbjee')
             }
           >
-            ← Back to WBJEE Colleges
+            Back to Colleges
           </button>
-
         </div>
-
       </main>
-
     )
-
   }
 
 
-  const collegeImage =
-    collegeImages[college.id]
+  const cutoffData =
+    college.cutoffs?.[selectedCategory] || []
 
 
   return (
+    <main className="ju-page">
 
-    <main className="college-details-full-page">
-
-
-      {/* ============================= */}
-      {/* BACK */}
-      {/* ============================= */}
+      {/* =====================================================
+          BACK BUTTON
+         ===================================================== */}
 
       <button
-        className="college-details-back"
+        type="button"
+        className="ju-back-button"
         onClick={() =>
           navigate('/college-details/wbjee')
         }
       >
-        ← Back to Colleges
+        <span>←</span>
+
+        Back to WBJEE Colleges
       </button>
 
 
-      {/* ============================= */}
-      {/* HERO IMAGE */}
-      {/* ============================= */}
+      {/* =====================================================
+          HERO
+         ===================================================== */}
 
-      <section className="college-details-hero">
+      <section className="ju-hero">
 
-        <div className="college-details-image">
+        <div className="ju-hero-image-wrap">
 
           <img
-            src={collegeImage}
+            src={college.image}
             alt={college.name}
+            className="ju-hero-image"
           />
 
         </div>
 
-      </section>
 
+        <div className="ju-hero-content">
 
-      {/* ============================= */}
-      {/* BASIC INFORMATION */}
-      {/* ============================= */}
-
-      <section className="college-basic-info">
-
-        <span>
-          WBJEE COLLEGE
-        </span>
-
-
-        <h1>
-          {college.name}
-        </h1>
-
-
-        <div className="college-basic-grid">
-
-
-          <div>
-
-            <small>
-              COLLEGE RANK
-            </small>
-
-            <strong>
-              #{college.rank}
-            </strong>
-
+          <div className="ju-rank-badge">
+            <span>#</span>
+            {college.rank}
+            <span>WBJEE RANK</span>
           </div>
 
 
-          <div>
-
-            <small>
-              FOUNDATION
-            </small>
-
-            <strong>
-              {college.foundation}
-            </strong>
-
-          </div>
+          <h1>
+            {college.name}
+          </h1>
 
 
-          <div>
-
-            <small>
-              LOCATION
-            </small>
-
-            <strong>
-              {college.location}
-            </strong>
-
-          </div>
-
-
-          <div>
-
-            <small>
-              CATEGORY
-            </small>
-
-            <strong>
-              {college.category}
-            </strong>
-
-          </div>
-
-
-        </div>
-
-
-        {/* HISTORICAL ORIGIN */}
-
-        <div className="college-history-info">
-
-          <small>
-            HISTORICAL ORIGIN
-          </small>
-
-          <p>
-            National Council of Education,
-            Bengal — {college.historicalOrigin}
+          <p className="ju-category">
+            {college.category}
           </p>
 
-        </div>
 
+          <p className="ju-location">
+            📍 {college.location}
+          </p>
+
+
+          <div className="ju-hero-tags">
+
+            <span>
+              Established {college.foundation}
+            </span>
+
+            <span>
+              Origin {college.historicalOrigin}
+            </span>
+
+          </div>
+
+        </div>
 
       </section>
 
 
-      {/* ============================= */}
-      {/* ALL BRANCHES */}
-      {/* ============================= */}
+      {/* =====================================================
+          OVERVIEW
+         ===================================================== */}
 
-      <section className="college-info-section">
+      <section className="ju-section">
 
-        <div className="college-section-heading">
+        <div className="ju-section-heading">
 
-          <span>
-            ACADEMICS
-          </span>
+          <span>OVERVIEW</span>
 
           <h2>
-            All Available Branches
+            About the College
           </h2>
 
         </div>
 
 
-        <div className="college-branch-grid">
+        <div className="ju-overview-grid">
+
+          <div className="ju-stat-card">
+            <small>COLLEGE RANK</small>
+
+            <strong>
+              #{college.rank}
+            </strong>
+          </div>
+
+
+          <div className="ju-stat-card">
+            <small>FOUNDED</small>
+
+            <strong>
+              {college.foundation}
+            </strong>
+          </div>
+
+
+          <div className="ju-stat-card">
+            <small>HISTORICAL ORIGIN</small>
+
+            <strong>
+              {college.historicalOrigin}
+            </strong>
+          </div>
+
+
+          <div className="ju-stat-card">
+            <small>TYPE</small>
+
+            <strong>
+              {college.category}
+            </strong>
+          </div>
+
+        </div>
+
+
+        <div className="ju-location-card">
+
+          <span>LOCATION</span>
+
+          <p>
+            {college.location}
+          </p>
+
+        </div>
+
+      </section>
+
+
+      {/* =====================================================
+          BRANCHES
+         ===================================================== */}
+
+      <section className="ju-section">
+
+        <div className="ju-section-heading">
+
+          <span>ACADEMICS</span>
+
+          <h2>
+            Available Branches
+          </h2>
+
+          <p>
+            Engineering programs available at
+            {` ${college.name}`}.
+          </p>
+
+        </div>
+
+
+        <div className="ju-branch-grid">
 
           {college.branches.map(
             (branch, index) => (
-
               <div
-                key={index}
-                className="college-branch-card"
+                className="ju-branch-card"
+                key={branch}
               >
-                {branch}
-              </div>
 
+                <span className="ju-branch-number">
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+
+                <span className="ju-branch-name">
+                  {branch}
+                </span>
+
+              </div>
             )
           )}
 
@@ -279,94 +277,142 @@ function CollegePage() {
       </section>
 
 
-      {/* ============================= */}
-      {/* CUTOFF */}
-      {/* ============================= */}
+      {/* =====================================================
+          CUTOFF
+         ===================================================== */}
 
-      <section className="college-info-section">
+      <section className="ju-section">
 
-        <div className="college-section-heading">
+        <div className="ju-section-heading">
 
-          <span>
-            WBJEE 2025 • ROUND 1 • GENERAL • HS
-          </span>
+          <span>ADMISSION</span>
 
           <h2>
-            Branch-wise Cutoff
+            WBJEE Branch-wise Cutoff
           </h2>
 
+          <p>
+            WBJEE 2025 · Round 1 ·
+            West Bengal Domicile
+          </p>
+
+        </div>
+
+
+        <div className="ju-category-tabs">
+
+          {categories.map(
+            (category) => (
+              <button
+                key={category.key}
+                type="button"
+                className={
+                  selectedCategory === category.key
+                    ? 'active'
+                    : ''
+                }
+                onClick={() =>
+                  setSelectedCategory(category.key)
+                }
+              >
+                {category.label}
+              </button>
+            )
+          )}
+
         </div>
 
 
-        <div className="college-table-wrapper">
+        <div className="ju-cutoff-meta">
 
-          <table>
+          <span>
+            WBJEE 2025
+          </span>
 
-            <thead>
+          <span>
+            ROUND 1
+          </span>
 
-              <tr>
+          <span>
+            {categories.find(
+              (item) =>
+                item.key === selectedCategory
+            )?.label}
+          </span>
 
-                <th>
-                  Branch
-                </th>
-
-                <th>
-                  Opening Rank
-                </th>
-
-                <th>
-                  Closing Rank
-                </th>
-
-              </tr>
-
-            </thead>
-
-
-            <tbody>
-
-              {college.cutoffs.map(
-                (item, index) => (
-
-                  <tr key={index}>
-
-                    <td>
-                      {item.branch}
-                    </td>
-
-                    <td>
-                      {item.opening}
-                    </td>
-
-                    <td>
-                      {item.closing}
-                    </td>
-
-                  </tr>
-
-                )
-              )}
-
-            </tbody>
-
-          </table>
+          <span>
+            HOME STATE
+          </span>
 
         </div>
+
+
+        {cutoffData.length > 0 ? (
+
+          <div className="ju-table-container">
+
+            <table className="ju-table">
+
+              <thead>
+
+                <tr>
+                  <th>Branch</th>
+                  <th>Opening Rank</th>
+                  <th>Closing Rank</th>
+                </tr>
+
+              </thead>
+
+
+              <tbody>
+
+                {cutoffData.map(
+                  (item) => (
+                    <tr key={item.branch}>
+
+                      <td>
+                        {item.branch}
+                      </td>
+
+                      <td>
+                        {item.opening}
+                      </td>
+
+                      <td>
+                        {item.closing}
+                      </td>
+
+                    </tr>
+                  )
+                )}
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        ) : (
+
+          <div className="ju-empty">
+            Cutoff data is not available
+            for this category yet.
+          </div>
+
+        )}
 
       </section>
 
 
-      {/* ============================= */}
-      {/* STUDY COST */}
-      {/* ============================= */}
+      {/* =====================================================
+          FEES
+         ===================================================== */}
 
-      <section className="college-info-section">
+      <section className="ju-section">
 
-        <div className="college-section-heading">
+        <div className="ju-section-heading">
 
-          <span>
-            2025-26 ADMISSION FEES
-          </span>
+          <span>FEES</span>
 
           <h2>
             Study Cost by Branch
@@ -375,22 +421,15 @@ function CollegePage() {
         </div>
 
 
-        <div className="college-table-wrapper">
+        <div className="ju-table-container">
 
-          <table>
+          <table className="ju-table">
 
             <thead>
 
               <tr>
-
-                <th>
-                  Branch
-                </th>
-
-                <th>
-                  Admission Fee
-                </th>
-
+                <th>Branch</th>
+                <th>Admission Fee</th>
               </tr>
 
             </thead>
@@ -399,20 +438,18 @@ function CollegePage() {
             <tbody>
 
               {college.fees.map(
-                (item, index) => (
-
-                  <tr key={index}>
+                (item) => (
+                  <tr key={item.branch}>
 
                     <td>
                       {item.branch}
                     </td>
 
-                    <td>
+                    <td className="ju-fee">
                       {item.cost}
                     </td>
 
                   </tr>
-
                 )
               )}
 
@@ -423,22 +460,19 @@ function CollegePage() {
         </div>
 
 
-        <div className="college-fee-note">
+        <div className="ju-note">
 
           <p>
-            * ₹5,210 applies to UG Engineering /
-            Technology / Pharmacy courses except
+            * ₹5,210 applies to UG
+            Engineering / Technology /
+            Pharmacy courses except
             Information Technology.
           </p>
 
           <p>
-            ** ₹30,360 is the stated 2025-26
-            admission fee for Information Technology.
-          </p>
-
-          <p>
-            These are admission charges and are not
-            the complete lifetime course cost.
+            ** ₹30,360 is the stated
+            2025-26 admission fee for
+            Information Technology.
           </p>
 
         </div>
@@ -446,33 +480,28 @@ function CollegePage() {
       </section>
 
 
-      {/* ============================= */}
-      {/* HOSTEL */}
-      {/* ============================= */}
+      {/* =====================================================
+          HOSTEL
+         ===================================================== */}
 
-      <section className="college-info-section">
+      <section className="ju-section">
 
-        <div className="college-section-heading">
+        <div className="ju-section-heading">
 
-          <span>
-            CAMPUS LIFE
-          </span>
+          <span>CAMPUS LIFE</span>
 
           <h2>
-            Hostel Cost
+            Hostel Information
           </h2>
 
         </div>
 
 
-        <div className="college-hostel-grid">
+        <div className="ju-detail-grid">
 
+          <div className="ju-detail-card">
 
-          <div>
-
-            <small>
-              HOSTEL ADMISSION
-            </small>
+            <small>HOSTEL ADMISSION</small>
 
             <strong>
               {college.hostel.admission}
@@ -481,11 +510,9 @@ function CollegePage() {
           </div>
 
 
-          <div>
+          <div className="ju-detail-card">
 
-            <small>
-              MONTHLY SEAT RENT
-            </small>
+            <small>MONTHLY SEAT RENT</small>
 
             <strong>
               {college.hostel.monthlySeatRent}
@@ -494,11 +521,9 @@ function CollegePage() {
           </div>
 
 
-          <div>
+          <div className="ju-detail-card">
 
-            <small>
-              ELECTRICITY
-            </small>
+            <small>ELECTRICITY</small>
 
             <strong>
               {college.hostel.electricity}
@@ -507,11 +532,9 @@ function CollegePage() {
           </div>
 
 
-          <div>
+          <div className="ju-detail-card">
 
-            <small>
-              ACCOMMODATION
-            </small>
+            <small>ACCOMMODATION</small>
 
             <strong>
               {college.hostel.accommodation}
@@ -519,51 +542,45 @@ function CollegePage() {
 
           </div>
 
-
         </div>
 
 
-        <div className="college-single-info">
+        <div className="ju-mess-card">
 
-          <strong>
-            Mess:
-          </strong>
+          <span>MESS</span>
 
-          {' '}
-
-          {college.hostel.mess}
+          <p>
+            {college.hostel.mess}
+          </p>
 
         </div>
 
       </section>
 
 
-      {/* ============================= */}
-      {/* PLACEMENT */}
-      {/* ============================= */}
+      {/* =====================================================
+          PLACEMENT
+         ===================================================== */}
 
-      <section className="college-info-section">
+      <section className="ju-section">
 
-        <div className="college-section-heading">
+        <div className="ju-section-heading">
 
-          <span>
-            CAREER
-          </span>
+          <span>CAREER</span>
 
           <h2>
-            Placement
+            Placement Overview
           </h2>
 
         </div>
 
 
-        <div className="college-placement-grid">
+        <div className="ju-placement-grid">
 
-
-          <div>
+          <div className="ju-placement-card">
 
             <small>
-              ENGINEERING MEDIAN SALARY
+              ENGINEERING MEDIAN
             </small>
 
             <strong>
@@ -573,7 +590,7 @@ function CollegePage() {
           </div>
 
 
-          <div>
+          <div className="ju-placement-card">
 
             <small>
               STUDENTS PLACED
@@ -586,7 +603,7 @@ function CollegePage() {
           </div>
 
 
-          <div>
+          <div className="ju-placement-card">
 
             <small>
               CSE PLACEMENT
@@ -599,10 +616,10 @@ function CollegePage() {
           </div>
 
 
-          <div>
+          <div className="ju-placement-card">
 
             <small>
-              CSE AVERAGE PACKAGE
+              CSE AVERAGE
             </small>
 
             <strong>
@@ -612,10 +629,10 @@ function CollegePage() {
           </div>
 
 
-          <div>
+          <div className="ju-placement-card">
 
             <small>
-              CSE HIGHEST PACKAGE
+              CSE HIGHEST
             </small>
 
             <strong>
@@ -624,35 +641,33 @@ function CollegePage() {
 
           </div>
 
-
         </div>
 
       </section>
 
 
-      {/* ============================= */}
-      {/* DATA NOTE */}
-      {/* ============================= */}
+      {/* =====================================================
+          FOOT NOTE
+         ===================================================== */}
 
-      <section className="college-data-note">
+      <div className="ju-footer-note">
 
         <p>
-          Cutoff: WBJEE 2025 Round 1,
-          General category, West Bengal Domicile.
+          College information and cutoff
+          data are displayed from the
+          DreamCampus college database.
         </p>
 
         <p>
-          College data can be updated from
-          wbjeeColleges.js without changing this page.
+          Verify the latest official
+          counselling information before
+          admission decisions.
         </p>
 
-      </section>
-
+      </div>
 
     </main>
-
   )
-
 }
 
 

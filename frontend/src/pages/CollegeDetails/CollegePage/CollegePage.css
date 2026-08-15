@@ -1,221 +1,396 @@
-/* ================================= */
-/* COLLEGE DETAILS FULL PAGE         */
-/* ================================= */
+/* =========================================================
+   DREAMCAMPUS
+   NEW COLLEGE DETAILS PAGE
+   ========================================================= */
 
-.college-details-full-page {
-  min-height: 100vh;
 
-  padding: 115px 7% 80px;
+/* =========================================================
+   PAGE
+   ========================================================= */
 
-  background:
-    radial-gradient(
-      circle at top left,
-      rgba(99, 102, 241, 0.14),
-      transparent 35%
-    ),
-    radial-gradient(
-      circle at bottom right,
-      rgba(168, 85, 247, 0.10),
-      transparent 35%
-    ),
-    #020617;
+.ju-page {
+  width: 100%;
 
-  color: white;
+  max-width: 1240px;
+
+  margin: 0 auto;
+
+  padding: 115px 24px 80px;
+
+  color: #e2e8f0;
+
+  isolation: isolate;
 }
 
 
-/* ================================= */
-/* BACK BUTTON                       */
-/* ================================= */
+.ju-page *,
+.ju-page *::before,
+.ju-page *::after {
+  box-sizing: border-box;
+}
 
-.college-details-back {
+
+/* =========================================================
+   BACK BUTTON
+   ========================================================= */
+
+.ju-back-button {
   display: inline-flex;
 
   align-items: center;
 
-  gap: 8px;
+  gap: 9px;
 
-  margin-bottom: 25px;
+  margin-bottom: 22px;
 
-  padding: 10px 17px;
+  padding: 9px 14px;
 
-  border: 1px solid rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 
-  border-radius: 12px;
+  border-radius: 10px;
 
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.035);
 
-  color: #cbd5e1;
+  color: #94a3b8;
 
-  font-size: 13px;
+  font-family: inherit;
+
+  font-size: 12px;
+
+  font-weight: 600;
 
   cursor: pointer;
 
-  transition: 0.25s ease;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
 }
 
 
-.college-details-back:hover {
-  transform: translateX(-4px);
+.ju-back-button span {
+  font-size: 16px;
 
-  border-color: rgba(129, 140, 248, 0.45);
-
-  background: rgba(255, 255, 255, 0.08);
-
-  color: white;
+  line-height: 1;
 }
 
 
-/* ================================= */
-/* HERO                              */
-/* ================================= */
+.ju-back-button:hover {
+  background: rgba(255, 255, 255, 0.07);
 
-.college-details-hero {
-  width: min(1200px, 100%);
+  color: #f8fafc;
 
-  margin: 0 auto 35px;
+  border-color: rgba(129, 140, 248, 0.25);
+}
 
-  overflow: hidden;
 
-  border: 1px solid rgba(255, 255, 255, 0.10);
+/* =========================================================
+   HERO
+   ========================================================= */
 
-  border-radius: 28px;
+.ju-hero {
+  width: 100%;
 
-  background: rgba(255, 255, 255, 0.04);
+  display: grid;
+
+  grid-template-columns: 300px minmax(0, 1fr);
+
+  gap: 30px;
+
+  align-items: center;
+
+  padding: 22px;
+
+  margin-bottom: 30px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 24px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.055),
+      rgba(255, 255, 255, 0.025)
+    );
 
   box-shadow:
-    0 30px 80px rgba(0, 0, 0, 0.35);
+    0 22px 60px rgba(0, 0, 0, 0.25);
 }
 
 
-.college-details-image {
-  width: 100%;
-  height: 600px;
+/* =========================================================
+   HERO IMAGE
+   ========================================================= */
+
+.ju-hero-image-wrap {
+  width: 300px;
+
+  height: 220px;
+
   overflow: hidden;
+
+  border-radius: 17px;
+
   background: #0f172a;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.college-details-image img {
-  width: 100%;
-  height: 100%;
+
+.ju-hero-image {
   display: block;
+
+  width: 100%;
+
+  height: 100%;
+
   object-fit: cover;
+
   object-position: center;
 }
 
 
-.college-details-hero:hover
-.college-details-image img {
-  transform: scale(1.03);
+/* =========================================================
+   HERO CONTENT
+   ========================================================= */
+
+.ju-hero-content {
+  min-width: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
 }
 
 
-/* ================================= */
-/* BASIC INFORMATION                 */
-/* ================================= */
+.ju-rank-badge {
+  width: fit-content;
 
-.college-basic-info {
-  width: min(1200px, 100%);
+  display: inline-flex;
 
-  margin: 0 auto 55px;
+  align-items: center;
 
-  padding: 35px;
+  gap: 5px;
 
-  border: 1px solid rgba(255, 255, 255, 0.09);
+  margin-bottom: 13px;
 
-  border-radius: 24px;
+  padding: 6px 10px;
 
-  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(129, 140, 248, 0.22);
 
-  backdrop-filter: blur(18px);
+  border-radius: 8px;
+
+  background: rgba(99, 102, 241, 0.10);
+
+  color: #a5b4fc;
+
+  font-size: 13px;
+
+  font-weight: 750;
+}
+
+
+.ju-rank-badge span:last-child {
+  margin-left: 4px;
+
+  color: #64748b;
+
+  font-size: 9px;
+
+  letter-spacing: 1px;
+}
+
+
+.ju-hero-content h1 {
+  margin: 0 0 10px;
+
+  color: #f8fafc;
+
+  font-size: clamp(30px, 4vw, 46px);
+
+  line-height: 1.12;
+
+  font-weight: 800;
+
+  letter-spacing: -1px;
+}
+
+
+.ju-category {
+  margin: 0 0 8px;
+
+  color: #a5b4fc;
+
+  font-size: 14px;
+
+  line-height: 1.5;
+
+  font-weight: 600;
+}
+
+
+.ju-location {
+  margin: 0;
+
+  color: #94a3b8;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+
+.ju-hero-tags {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 8px;
+
+  margin-top: 18px;
+}
+
+
+.ju-hero-tags span {
+  padding: 6px 10px;
+
+  border-radius: 8px;
+
+  background: rgba(255, 255, 255, 0.04);
+
+  border: 1px solid rgba(255, 255, 255, 0.06);
+
+  color: #64748b;
+
+  font-size: 10px;
+
+  font-weight: 650;
+}
+
+
+/* =========================================================
+   SECTION
+   ========================================================= */
+
+.ju-section {
+  width: 100%;
+
+  margin-bottom: 26px;
+
+  padding: 28px;
+
+  border: 1px solid rgba(255, 255, 255, 0.075);
+
+  border-radius: 21px;
+
+  background:
+    rgba(255, 255, 255, 0.032);
 
   box-shadow:
-    0 20px 60px rgba(0, 0, 0, 0.20);
+    0 15px 45px rgba(0, 0, 0, 0.14);
 }
 
 
-.college-basic-info > span {
-  display: inline-block;
+/* =========================================================
+   SECTION HEADING
+   ========================================================= */
 
-  margin-bottom: 10px;
+.ju-section-heading {
+  width: 100%;
+
+  margin-bottom: 22px;
+}
+
+
+.ju-section-heading span {
+  display: block;
+
+  margin-bottom: 7px;
 
   color: #818cf8;
 
-  font-size: 11px;
+  font-size: 9px;
 
-  font-weight: 700;
+  font-weight: 750;
 
-  letter-spacing: 1.8px;
+  letter-spacing: 1.7px;
 }
 
 
-.college-basic-info h1 {
-  margin: 0 0 30px;
+.ju-section-heading h2 {
+  margin: 0;
 
-  color: white;
+  color: #f8fafc;
 
-  font-size: clamp(32px, 5vw, 52px);
+  font-size: 26px;
 
-  line-height: 1.1;
+  line-height: 1.25;
 
-  font-weight: 800;
+  font-weight: 760;
 }
 
 
-/* ================================= */
-/* BASIC INFO GRID                   */
-/* ================================= */
+.ju-section-heading p {
+  margin: 8px 0 0;
 
-.college-basic-grid {
+  color: #64748b;
+
+  font-size: 12px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   OVERVIEW
+   ========================================================= */
+
+.ju-overview-grid {
+  width: 100%;
+
   display: grid;
 
   grid-template-columns:
     repeat(4, minmax(0, 1fr));
 
-  gap: 15px;
+  gap: 12px;
 }
 
 
-.college-basic-grid > div {
+.ju-stat-card {
+  min-width: 0;
+
   min-height: 105px;
 
-  padding: 20px;
+  padding: 18px;
 
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.07);
 
-  border-radius: 17px;
+  border-radius: 15px;
 
-  background: rgba(255, 255, 255, 0.035);
-
-  transition: 0.25s ease;
+  background: rgba(255, 255, 255, 0.028);
 }
 
 
-.college-basic-grid > div:hover {
-  transform: translateY(-4px);
-
-  border-color: rgba(129, 140, 248, 0.35);
-
-  background: rgba(255, 255, 255, 0.055);
-}
-
-
-.college-basic-grid small {
+.ju-stat-card small {
   display: block;
 
   margin-bottom: 10px;
 
   color: #64748b;
 
-  font-size: 10px;
+  font-size: 9px;
 
-  font-weight: 700;
+  font-weight: 750;
 
   letter-spacing: 1px;
 }
 
 
-.college-basic-grid strong {
+.ju-stat-card strong {
   display: block;
 
   color: #e2e8f0;
@@ -223,442 +398,109 @@
   font-size: 15px;
 
   line-height: 1.5;
+
+  font-weight: 650;
+
+  overflow-wrap: normal;
 }
 
 
-/* ================================= */
-/* HISTORY                           */
-/* ================================= */
+.ju-location-card {
+  margin-top: 12px;
 
-.college-history-info {
-  margin-top: 15px;
+  padding: 17px 18px;
 
-  padding: 18px 22px;
-
-  border: 1px solid rgba(255, 255, 255, 0.08);
-
-  border-radius: 16px;
-
-  background: rgba(255, 255, 255, 0.035);
-}
-
-
-.college-history-info small {
-  color: #64748b;
-
-  font-size: 10px;
-
-  font-weight: 600;
-
-  letter-spacing: 1px;
-}
-
-
-.college-history-info p {
-  margin-top: 7px;
-
-  color: #94a3b8;
-
-  font-size: 13px;
-}
-
-
-/* ================================= */
-/* INFORMATION SECTIONS              */
-/* ================================= */
-
-.college-info-section {
-  width: min(1200px, 100%);
-
-  margin: 0 auto 55px;
-
-  padding: 32px;
-
-  border: 1px solid rgba(255, 255, 255, 0.08);
-
-  border-radius: 24px;
-
-  background: rgba(255, 255, 255, 0.035);
-
-  backdrop-filter: blur(15px);
-}
-
-
-/* ================================= */
-/* SECTION HEADING                   */
-/* ================================= */
-
-.college-section-heading {
-  margin-bottom: 25px;
-}
-
-
-.college-section-heading span {
-  display: block;
-
-  margin-bottom: 8px;
-
-  color: #818cf8;
-
-  font-size: 10px;
-
-  font-weight: 700;
-
-  letter-spacing: 1.5px;
-}
-
-
-.college-section-heading h2 {
-  margin: 0;
-
-  color: white;
-
-  font-size: 28px;
-
-  font-weight: 750;
-}
-
-
-/* ================================= */
-/* BRANCH GRID                       */
-/* ================================= */
-
-.college-branch-grid {
-  display: grid;
-
-  grid-template-columns:
-    repeat(3, minmax(0, 1fr));
-
-  gap: 13px;
-}
-
-
-.college-branch-card {
-  min-height: 65px;
-
-  display: flex;
-
-  align-items: center;
-
-  padding: 15px 17px;
-
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.07);
 
   border-radius: 15px;
 
-  background: rgba(255, 255, 255, 0.04);
-
-  color: #cbd5e1;
-
-  font-size: 13px;
-
-  line-height: 1.4;
-
-  transition: 0.25s ease;
+  background: rgba(255, 255, 255, 0.025);
 }
 
 
-.college-branch-card:hover {
-  transform: translateY(-4px);
-
-  border-color: rgba(129, 140, 248, 0.40);
-
-  background: rgba(129, 140, 248, 0.08);
-
-  color: white;
-}
-
-
-/* ================================= */
-/* TABLE                             */
-/* ================================= */
-
-.college-table-wrapper {
-  width: 100%;
-
-  overflow-x: auto;
-
-  border: 1px solid rgba(255, 255, 255, 0.08);
-
-  border-radius: 17px;
-}
-
-
-.college-table-wrapper table {
-  width: 100%;
-
-  min-width: 650px;
-
-  border-collapse: collapse;
-}
-
-
-.college-table-wrapper th {
-  padding: 16px 18px;
-
-  background: rgba(129, 140, 248, 0.08);
-
-  color: #a5b4fc;
-
-  font-size: 12px;
-
-  font-weight: 700;
-
-  text-align: left;
-
-  white-space: nowrap;
-}
-
-
-.college-table-wrapper td {
-  padding: 15px 18px;
-
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-
-  color: #cbd5e1;
-
-  font-size: 13px;
-
-  line-height: 1.5;
-}
-
-
-.college-table-wrapper tbody tr {
-  transition: 0.2s ease;
-}
-
-
-.college-table-wrapper tbody tr:hover {
-  background: rgba(255, 255, 255, 0.045);
-}
-
-
-.college-table-wrapper td:nth-child(2),
-.college-table-wrapper td:nth-child(3) {
-  color: #a5b4fc;
-
-  font-weight: 600;
-}
-
-
-/* ================================= */
-/* FEE NOTE                          */
-/* ================================= */
-
-.college-fee-note {
-  margin-top: 15px;
-
-  padding: 18px 20px;
-
-  border-left: 2px solid #818cf8;
-
-  border-radius: 12px;
-
-  background: rgba(129, 140, 248, 0.05);
-}
-
-
-.college-fee-note p {
-  margin: 5px 0;
-
-  color: #64748b;
-
-  font-size: 11px;
-
-  line-height: 1.6;
-}
-
-
-/* ================================= */
-/* HOSTEL                            */
-/* ================================= */
-
-.college-hostel-grid {
-  display: grid;
-
-  grid-template-columns:
-    repeat(4, minmax(0, 1fr));
-
-  gap: 14px;
-
-  margin-bottom: 15px;
-}
-
-
-.college-hostel-grid > div {
-  padding: 22px;
-
-  border: 1px solid rgba(255, 255, 255, 0.09);
-
-  border-radius: 18px;
-
-  background: rgba(255, 255, 255, 0.045);
-
-  transition: 0.25s ease;
-}
-
-
-.college-hostel-grid > div:hover {
-  transform: translateY(-4px);
-
-  border-color: rgba(129, 140, 248, 0.35);
-}
-
-
-.college-hostel-grid small {
+.ju-location-card span {
   display: block;
 
-  margin-bottom: 8px;
-
-  color: #64748b;
-
-  font-size: 10px;
-
-  font-weight: 600;
-
-  letter-spacing: 1px;
-}
-
-
-.college-hostel-grid strong {
-  display: block;
-
-  color: #e2e8f0;
-
-  font-size: 14px;
-
-  line-height: 1.5;
-}
-
-
-/* ================================= */
-/* SINGLE INFORMATION                */
-/* ================================= */
-
-.college-single-info {
-  padding: 18px 20px;
-
-  border-radius: 15px;
-
-  background: rgba(255, 255, 255, 0.035);
-
-  color: #94a3b8;
-
-  font-size: 13px;
-
-  line-height: 1.6;
-}
-
-
-.college-single-info strong {
-  color: #cbd5e1;
-}
-
-
-/* ================================= */
-/* PLACEMENT                         */
-/* ================================= */
-
-.college-placement-grid {
-  display: grid;
-
-  grid-template-columns:
-    repeat(5, minmax(0, 1fr));
-
-  gap: 14px;
-}
-
-
-.college-placement-grid > div {
-  min-height: 120px;
-
-  padding: 20px;
-
-  border: 1px solid rgba(255, 255, 255, 0.08);
-
-  border-radius: 17px;
-
-  background: rgba(255, 255, 255, 0.04);
-
-  transition: 0.25s ease;
-}
-
-
-.college-placement-grid > div:hover {
-  transform: translateY(-4px);
-
-  border-color: rgba(129, 140, 248, 0.35);
-
-  background: rgba(129, 140, 248, 0.06);
-}
-
-
-.college-placement-grid small {
-  display: block;
-
-  margin-bottom: 12px;
+  margin-bottom: 7px;
 
   color: #64748b;
 
   font-size: 9px;
 
-  font-weight: 700;
+  font-weight: 750;
 
-  letter-spacing: 0.8px;
-
-  line-height: 1.4;
+  letter-spacing: 1px;
 }
 
 
-.college-placement-grid strong {
-  display: block;
+.ju-location-card p {
+  margin: 0;
 
-  color: #e2e8f0;
+  color: #cbd5e1;
 
-  font-size: 17px;
-
-  line-height: 1.4;
-}
-
-
-/* ================================= */
-/* DATA NOTE                         */
-/* ================================= */
-
-.college-data-note {
-  width: min(1200px, 100%);
-
-  margin: 60px auto 0;
-
-  padding: 20px;
-
-  border: 1px solid rgba(255, 255, 255, 0.07);
-
-  border-radius: 16px;
-
-  background: rgba(255, 255, 255, 0.03);
-
-  text-align: center;
-}
-
-
-.college-data-note p {
-  margin: 4px 0;
-
-  color: #475569;
-
-  font-size: 11px;
+  font-size: 13px;
 
   line-height: 1.6;
 }
 
 
-/* ================================= */
-/* ERROR PAGE                        */
-/* ================================= */
+/* =========================================================
+   BRANCHES
+   ========================================================= */
 
-.college-page-error {
-  min-height: 100vh;
+.ju-branch-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 11px;
+}
+
+
+.ju-branch-card {
+  min-width: 0;
+
+  min-height: 66px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 12px 14px;
+
+  border: 1px solid rgba(255, 255, 255, 0.065);
+
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.025);
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+.ju-branch-card:hover {
+  transform: translateY(-2px);
+
+  background: rgba(129, 140, 248, 0.06);
+
+  border-color: rgba(129, 140, 248, 0.22);
+}
+
+
+.ju-branch-number {
+  flex: 0 0 32px;
+
+  width: 32px;
+
+  height: 32px;
 
   display: flex;
 
@@ -666,65 +508,628 @@
 
   justify-content: center;
 
-  padding: 100px 20px;
+  border-radius: 8px;
 
-  background: #020617;
+  background: rgba(99, 102, 241, 0.10);
 
-  color: white;
+  color: #818cf8;
+
+  font-size: 9px;
+
+  font-weight: 750;
+}
+
+
+.ju-branch-name {
+  min-width: 0;
+
+  color: #cbd5e1;
+
+  font-size: 12px;
+
+  line-height: 1.45;
+
+  font-weight: 550;
+
+  white-space: normal;
+
+  word-break: normal;
+
+  overflow-wrap: normal;
+}
+
+
+/* =========================================================
+   CATEGORY TABS
+   ========================================================= */
+
+.ju-category-tabs {
+  width: 100%;
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 7px;
+
+  margin-bottom: 16px;
+}
+
+
+.ju-category-tabs button {
+  min-height: 34px;
+
+  padding: 7px 13px;
+
+  border: 1px solid rgba(255, 255, 255, 0.07);
+
+  border-radius: 9px;
+
+  background: rgba(255, 255, 255, 0.03);
+
+  color: #64748b;
+
+  font-family: inherit;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+.ju-category-tabs button:hover {
+  color: #cbd5e1;
+
+  background: rgba(255, 255, 255, 0.055);
+}
+
+
+.ju-category-tabs button.active {
+  color: #a5b4fc;
+
+  background: rgba(99, 102, 241, 0.12);
+
+  border-color: rgba(129, 140, 248, 0.28);
+}
+
+
+/* =========================================================
+   CUTOFF META
+   ========================================================= */
+
+.ju-cutoff-meta {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 7px;
+
+  margin-bottom: 14px;
+}
+
+
+.ju-cutoff-meta span {
+  padding: 5px 9px;
+
+  border-radius: 7px;
+
+  background: rgba(255, 255, 255, 0.03);
+
+  color: #64748b;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.4px;
+}
+
+
+/* =========================================================
+   TABLE
+   ========================================================= */
+
+.ju-table-container {
+  width: 100%;
+
+  max-width: 100%;
+
+  overflow-x: auto;
+
+  border: 1px solid rgba(255, 255, 255, 0.065);
+
+  border-radius: 14px;
+
+  background: rgba(2, 6, 23, 0.28);
+}
+
+
+.ju-table {
+  width: 100%;
+
+  min-width: 600px;
+
+  border-collapse: collapse;
+
+  table-layout: auto;
+}
+
+
+.ju-table th {
+  padding: 14px 16px;
+
+  background: rgba(255, 255, 255, 0.035);
+
+  color: #64748b;
+
+  font-size: 9px;
+
+  font-weight: 750;
+
+  letter-spacing: 0.8px;
+
+  text-align: left;
+
+  white-space: nowrap;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.065);
+}
+
+
+.ju-table td {
+  padding: 14px 16px;
+
+  color: #cbd5e1;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+
+  text-align: left;
+
+  vertical-align: middle;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.045);
+
+  white-space: normal;
+
+  word-break: normal;
+
+  overflow-wrap: normal;
+}
+
+
+.ju-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+
+.ju-table tbody tr:hover {
+  background: rgba(129, 140, 248, 0.045);
+}
+
+
+.ju-table td:nth-child(2),
+.ju-table td:nth-child(3) {
+  color: #a5b4fc;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+
+.ju-fee {
+  color: #a5b4fc !important;
+
+  font-weight: 700 !important;
+
+  white-space: nowrap !important;
+}
+
+
+/* =========================================================
+   EMPTY
+   ========================================================= */
+
+.ju-empty {
+  width: 100%;
+
+  padding: 20px;
+
+  border: 1px solid rgba(255, 255, 255, 0.06);
+
+  border-radius: 13px;
+
+  background: rgba(255, 255, 255, 0.025);
+
+  color: #64748b;
+
+  font-size: 12px;
 
   text-align: center;
 }
 
 
-.college-page-error h1 {
-  margin-bottom: 20px;
+/* =========================================================
+   HOSTEL
+   ========================================================= */
 
-  font-size: 32px;
+.ju-detail-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 11px;
 }
 
 
-.college-page-error button {
-  padding: 12px 20px;
+.ju-detail-card {
+  min-width: 0;
+
+  padding: 18px;
+
+  border: 1px solid rgba(255, 255, 255, 0.065);
+
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.025);
+}
+
+
+.ju-detail-card small,
+.ju-placement-card small {
+  display: block;
+
+  margin-bottom: 9px;
+
+  color: #64748b;
+
+  font-size: 9px;
+
+  font-weight: 750;
+
+  letter-spacing: 0.9px;
+}
+
+
+.ju-detail-card strong {
+  display: block;
+
+  color: #e2e8f0;
+
+  font-size: 12px;
+
+  line-height: 1.55;
+
+  font-weight: 600;
+}
+
+
+.ju-mess-card {
+  margin-top: 11px;
+
+  padding: 17px 18px;
+
+  border: 1px solid rgba(255, 255, 255, 0.065);
+
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.025);
+}
+
+
+.ju-mess-card span {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #64748b;
+
+  font-size: 9px;
+
+  font-weight: 750;
+
+  letter-spacing: 1px;
+}
+
+
+.ju-mess-card p {
+  margin: 0;
+
+  color: #cbd5e1;
+
+  font-size: 12px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   PLACEMENT
+   ========================================================= */
+
+.ju-placement-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(5, minmax(0, 1fr));
+
+  gap: 11px;
+}
+
+
+.ju-placement-card {
+  min-width: 0;
+
+  min-height: 110px;
+
+  padding: 18px;
+
+  border: 1px solid rgba(255, 255, 255, 0.065);
+
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.025);
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+.ju-placement-card:hover {
+  transform: translateY(-2px);
+
+  border-color: rgba(129, 140, 248, 0.22);
+}
+
+
+.ju-placement-card strong {
+  display: block;
+
+  color: #e2e8f0;
+
+  font-size: 17px;
+
+  line-height: 1.4;
+
+  font-weight: 750;
+
+  white-space: normal;
+
+  word-break: normal;
+
+  overflow-wrap: normal;
+}
+
+
+/* =========================================================
+   NOTE
+   ========================================================= */
+
+.ju-note {
+  margin-top: 14px;
+
+  padding: 14px 16px;
+
+  border-left: 2px solid #818cf8;
+
+  border-radius: 8px;
+
+  background: rgba(255, 255, 255, 0.025);
+}
+
+
+.ju-note p {
+  margin: 3px 0;
+
+  color: #64748b;
+
+  font-size: 10px;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   FOOTER NOTE
+   ========================================================= */
+
+.ju-footer-note {
+  width: 100%;
+
+  padding: 18px 20px;
+
+  border: 1px solid rgba(255, 255, 255, 0.055);
+
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.02);
+
+  text-align: center;
+}
+
+
+.ju-footer-note p {
+  margin: 3px 0;
+
+  color: #475569;
+
+  font-size: 10px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   NOT FOUND
+   ========================================================= */
+
+.ju-not-found {
+  min-height: 100vh;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+
+.ju-not-found-card {
+  width: min(100%, 420px);
+
+  padding: 40px 30px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 22px;
+
+  background: rgba(255, 255, 255, 0.04);
+
+  text-align: center;
+}
+
+
+.ju-not-found-icon {
+  width: 50px;
+
+  height: 50px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  margin: 0 auto 18px;
+
+  border-radius: 50%;
+
+  background: rgba(239, 68, 68, 0.10);
+
+  color: #f87171;
+
+  font-size: 22px;
+
+  font-weight: 800;
+}
+
+
+.ju-not-found-card h1 {
+  margin: 0 0 8px;
+
+  color: #f8fafc;
+
+  font-size: 25px;
+}
+
+
+.ju-not-found-card p {
+  margin: 0 0 22px;
+
+  color: #64748b;
+
+  font-size: 13px;
+}
+
+
+.ju-not-found-card button {
+  padding: 10px 16px;
 
   border: none;
 
-  border-radius: 12px;
+  border-radius: 9px;
 
   background: #6366f1;
 
   color: white;
 
-  font-weight: 600;
+  font-family: inherit;
+
+  font-size: 12px;
+
+  font-weight: 650;
 
   cursor: pointer;
 }
 
 
-/* ================================= */
-/* RESPONSIVE                        */
-/* ================================= */
+/* =========================================================
+   TABLET
+   ========================================================= */
 
 @media (max-width: 1100px) {
 
-  .college-basic-grid {
+  .ju-overview-grid {
     grid-template-columns:
       repeat(2, minmax(0, 1fr));
   }
 
 
-  .college-placement-grid {
+  .ju-branch-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+
+  .ju-detail-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+
+  .ju-placement-grid {
     grid-template-columns:
       repeat(3, minmax(0, 1fr));
   }
 
+}
 
-  .college-branch-grid {
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
+
+/* =========================================================
+   SMALL TABLET
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+  .ju-page {
+    padding:
+      105px
+      18px
+      60px;
   }
 
 
-  .college-hostel-grid {
+  .ju-hero {
+    grid-template-columns:
+      260px minmax(0, 1fr);
+
+    gap: 22px;
+  }
+
+
+  .ju-hero-image-wrap {
+    width: 260px;
+
+    height: 200px;
+  }
+
+
+  .ju-placement-grid {
     grid-template-columns:
       repeat(2, minmax(0, 1fr));
   }
@@ -732,79 +1137,111 @@
 }
 
 
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
 @media (max-width: 650px) {
 
-  .college-details-full-page {
+  .ju-page {
     padding:
-      100px 18px 60px;
+      95px
+      13px
+      50px;
   }
 
 
-  .college-details-hero {
-    border-radius: 20px;
-  }
-
-
-  .college-details-image {
-    height: 240px;
-  }
-
-
-  .college-basic-info {
-    padding: 24px 18px;
-
-    border-radius: 20px;
-  }
-
-
-  .college-basic-info h1 {
-    font-size: 32px;
-
-    margin-bottom: 22px;
-  }
-
-
-  .college-basic-grid {
+  .ju-hero {
     grid-template-columns: 1fr;
 
-    gap: 10px;
+    gap: 18px;
+
+    padding: 16px;
+
+    border-radius: 18px;
   }
 
 
-  .college-basic-grid > div {
-    min-height: auto;
+  .ju-hero-image-wrap {
+    width: 100%;
+
+    height: 200px;
+
+    border-radius: 14px;
   }
 
 
-  .college-info-section {
-    padding: 22px 16px;
+  .ju-hero-content h1 {
+    font-size: 30px;
 
-    border-radius: 20px;
+    letter-spacing: -0.5px;
   }
 
 
-  .college-section-heading h2 {
+  .ju-section {
+    padding: 20px;
+
+    border-radius: 17px;
+  }
+
+
+  .ju-section-heading h2 {
     font-size: 23px;
   }
 
 
-  .college-branch-grid {
+  .ju-overview-grid {
     grid-template-columns: 1fr;
   }
 
 
-  .college-hostel-grid {
+  .ju-branch-grid {
     grid-template-columns: 1fr;
   }
 
 
-  .college-placement-grid {
+  .ju-detail-grid {
     grid-template-columns: 1fr;
   }
 
 
-  .college-details-back {
-    margin-bottom: 18px;
+  .ju-placement-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .ju-table {
+    min-width: 560px;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+  .ju-page {
+    padding-left: 10px;
+
+    padding-right: 10px;
+  }
+
+
+  .ju-hero {
+    padding: 13px;
+  }
+
+
+  .ju-hero-image-wrap {
+    height: 185px;
+  }
+
+
+  .ju-section {
+    padding: 16px;
   }
 
 }

@@ -3,14 +3,17 @@ import JEEMain from './pages/Exam/JEEMain/JEEMain'
 import NEET from './pages/Exam/NEET/NEET'
 import GetStarted from './pages/GetStarted/GetStarted'
 
+
 import WBJEEPredictor from './pages/RankPredictor/WBJEE'
 import JEEMainPredictor from './pages/RankPredictor/JEEMain'
 import NEETPredictor from './pages/RankPredictor/NEET'
+
 
 import StudyMaterials from './pages/StudyMaterials/StudyMaterials'
 import WBJEEMaterials from './pages/StudyMaterials/WBJEE'
 import JEEMainMaterials from './pages/StudyMaterials/JEEMain'
 import NEETMaterials from './pages/StudyMaterials/NEET'
+
 
 /* ============================= */
 /* COMMON STUDY MATERIAL PAGES   */
@@ -21,6 +24,7 @@ import Chemistry from './pages/StudyMaterials/Chemistry'
 import Mathematics from './pages/StudyMaterials/Mathematics'
 import Biology from './pages/StudyMaterials/Biology'
 
+
 /* ============================= */
 /* PREVIOUS YEAR QUESTIONS       */
 /* ============================= */
@@ -30,9 +34,13 @@ import PreviousYearQuestions
 
 import PYQExam
   from './pages/PreviousYearQuestions/PYQExam'
-  
 
-import { useState } from 'react'
+
+import {
+  useEffect,
+  useState,
+} from 'react'
+
 
 import {
   BrowserRouter,
@@ -40,15 +48,19 @@ import {
   Route,
   Navigate,
   useNavigate,
+  useLocation,
 } from 'react-router-dom'
+
 
 import Navbar from './components/Navbar/Navbar'
 import Home from './pages/Home/Home'
 import Login from './pages/Login/Login'
 import Profile from './pages/Profile/Profile'
 
+
 import AIDashboard
   from './pages/AIDashboard/AIDashboard'
+
 
 /* ============================= */
 /* COLLEGE DETAILS               */
@@ -60,8 +72,37 @@ import CollegeDetails
 import WBJEEColleges
   from './pages/CollegeDetails/WBJEE/WBJEEColleges'
 
+import JEEMainColleges
+  from './pages/CollegeDetails/JEEMain/JEEMainColleges'
+
 import CollegePage
   from './pages/CollegeDetails/CollegePage/CollegePage'
+
+
+
+/* ============================= */
+/*     SCROLL TO TOP             */
+/* ============================= */
+
+function ScrollToTop() {
+
+  const { pathname } = useLocation()
+
+
+  useEffect(() => {
+
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'instant',
+    })
+
+  }, [pathname])
+
+
+  return null
+}
+
 
 
 /* ============================= */
@@ -77,9 +118,11 @@ function ProtectedPage({
 
   const navigate = useNavigate()
 
+
   if (!isLoggedIn) {
 
     return (
+
       <main className="protected-page">
 
         <div className="protected-card">
@@ -88,17 +131,21 @@ function ProtectedPage({
             🔒
           </div>
 
+
           <h2>
             Login Required
           </h2>
+
 
           <p>
             Please login to access {title}.
           </p>
 
+
           <button onClick={onLogin}>
             Login
           </button>
+
 
           <button
             className="back-home-button"
@@ -110,8 +157,10 @@ function ProtectedPage({
         </div>
 
       </main>
+
     )
   }
+
 
   return (
 
@@ -123,9 +172,11 @@ function ProtectedPage({
           DreamCampus
         </span>
 
+
         <h1>
           {title}
         </h1>
+
 
         <p>
           {description}
@@ -134,8 +185,10 @@ function ProtectedPage({
       </div>
 
     </main>
+
   )
 }
+
 
 
 /* ============================= */
@@ -151,9 +204,11 @@ function ProtectedComponent({
 
   const navigate = useNavigate()
 
+
   if (!isLoggedIn) {
 
     return (
+
       <main className="protected-page">
 
         <div className="protected-card">
@@ -162,17 +217,21 @@ function ProtectedComponent({
             🔒
           </div>
 
+
           <h2>
             Login Required
           </h2>
+
 
           <p>
             Please login to access {title}.
           </p>
 
+
           <button onClick={onLogin}>
             Login
           </button>
+
 
           <button
             className="back-home-button"
@@ -184,11 +243,14 @@ function ProtectedComponent({
         </div>
 
       </main>
+
     )
   }
 
+
   return children
 }
+
 
 
 /* ============================= */
@@ -234,6 +296,7 @@ function App() {
           'dreamCampusStudent'
         )
 
+
       return savedStudent
         ? JSON.parse(savedStudent)
         : null
@@ -271,11 +334,9 @@ function App() {
   )
 
 
-  /*
-   * =============================
-   * LOGIN
-   * =============================
-   */
+  /* ============================= */
+  /* LOGIN */
+  /* ============================= */
 
   const handleLogin = (studentData) => {
 
@@ -283,6 +344,7 @@ function App() {
       'dreamCampusStudent',
       JSON.stringify(studentData)
     )
+
 
     setStudent(studentData)
 
@@ -293,17 +355,17 @@ function App() {
   }
 
 
-  /*
-   * =============================
-   * LOGOUT
-   * =============================
-   */
+
+  /* ============================= */
+  /* LOGOUT */
+  /* ============================= */
 
   const handleLogout = () => {
 
     localStorage.removeItem(
       'dreamCampusStudent'
     )
+
 
     setStudent(null)
 
@@ -312,13 +374,20 @@ function App() {
   }
 
 
+
   return (
 
     <BrowserRouter>
 
+      {/* ============================= */}
+      {/* SCROLL TO TOP                  */}
+      {/* ============================= */}
+
+      <ScrollToTop />
+
 
       {/* ============================= */}
-      {/* NAVBAR */}
+      {/* NAVBAR                         */}
       {/* ============================= */}
 
       <Navbar
@@ -331,14 +400,14 @@ function App() {
 
 
       {/* ============================= */}
-      {/* ROUTES */}
+      {/* ROUTES                         */}
       {/* ============================= */}
 
       <Routes>
 
 
         {/* ============================= */}
-        {/* HOME */}
+        {/* HOME                          */}
         {/* ============================= */}
 
         <Route
@@ -348,7 +417,7 @@ function App() {
 
 
         {/* ============================= */}
-        {/* GET STARTED */}
+        {/* GET STARTED                   */}
         {/* ============================= */}
 
         <Route
@@ -358,7 +427,7 @@ function App() {
 
 
         {/* ============================= */}
-        {/* EXAM INFORMATION PAGES */}
+        {/* EXAM INFORMATION PAGES       */}
         {/* ============================= */}
 
         <Route
@@ -366,10 +435,12 @@ function App() {
           element={<WBJEE />}
         />
 
+
         <Route
           path="/exams/jee-main"
           element={<JEEMain />}
         />
+
 
         <Route
           path="/exams/neet"
@@ -378,7 +449,7 @@ function App() {
 
 
         {/* ============================= */}
-        {/* RANK PREDICTOR MAIN */}
+        {/* RANK PREDICTOR MAIN           */}
         {/* ============================= */}
 
         <Route
@@ -395,7 +466,7 @@ function App() {
 
 
         {/* ============================= */}
-        {/* WBJEE RANK PREDICTOR */}
+        {/* WBJEE RANK PREDICTOR          */}
         {/* ============================= */}
 
         <Route
@@ -413,7 +484,7 @@ function App() {
 
 
         {/* ============================= */}
-        {/* JEE MAIN RANK PREDICTOR */}
+        {/* JEE MAIN RANK PREDICTOR       */}
         {/* ============================= */}
 
         <Route
@@ -431,7 +502,7 @@ function App() {
 
 
         {/* ============================= */}
-        {/* NEET RANK PREDICTOR */}
+        {/* NEET RANK PREDICTOR           */}
         {/* ============================= */}
 
         <Route
@@ -449,7 +520,7 @@ function App() {
 
 
         {/* ============================= */}
-        {/* STUDY MATERIALS */}
+        {/* STUDY MATERIALS               */}
         {/* ============================= */}
 
         <Route
@@ -467,7 +538,7 @@ function App() {
 
 
         {/* ============================= */}
-        {/* WBJEE STUDY MATERIALS */}
+        {/* WBJEE STUDY MATERIALS         */}
         {/* ============================= */}
 
         <Route
@@ -485,7 +556,7 @@ function App() {
 
 
         {/* ============================= */}
-        {/* JEE MAIN STUDY MATERIALS */}
+        {/* JEE MAIN STUDY MATERIALS      */}
         {/* ============================= */}
 
         <Route
@@ -503,7 +574,7 @@ function App() {
 
 
         {/* ============================= */}
-        {/* NEET STUDY MATERIALS */}
+        {/* NEET STUDY MATERIALS          */}
         {/* ============================= */}
 
         <Route
@@ -596,7 +667,7 @@ function App() {
 
 
         {/* ============================= */}
-        {/* PREVIOUS YEAR QUESTIONS */}
+        {/* PREVIOUS YEAR QUESTIONS       */}
         {/* ============================= */}
 
         <Route
@@ -628,7 +699,7 @@ function App() {
 
 
         {/* ============================= */}
-        {/* AI DASHBOARD */}
+        {/* AI DASHBOARD                  */}
         {/* ============================= */}
 
         <Route
@@ -646,7 +717,7 @@ function App() {
 
 
         {/* ============================= */}
-        {/* COLLEGE DETAILS */}
+        {/* COLLEGE DETAILS               */}
         {/* ============================= */}
 
         <Route
@@ -656,7 +727,7 @@ function App() {
 
 
         {/* ============================= */}
-        {/* WBJEE COLLEGE LIST */}
+        {/* WBJEE COLLEGE LIST            */}
         {/* ============================= */}
 
         <Route
@@ -666,7 +737,17 @@ function App() {
 
 
         {/* ============================= */}
-        {/* INDIVIDUAL COLLEGE DETAILS */}
+        {/* JEE MAIN COLLEGE LIST         */}
+        {/* ============================= */}
+
+        <Route
+          path="/college-details/jee-main"
+          element={<JEEMainColleges />}
+        />
+
+
+        {/* ============================= */}
+        {/* INDIVIDUAL COLLEGE DETAILS    */}
         {/* ============================= */}
 
         <Route
@@ -676,7 +757,7 @@ function App() {
 
 
         {/* ============================= */}
-        {/* PROFILE */}
+        {/* PROFILE                       */}
         {/* ============================= */}
 
         <Route
@@ -706,7 +787,7 @@ function App() {
 
 
         {/* ============================= */}
-        {/* UNKNOWN URL */}
+        {/* UNKNOWN URL                   */}
         {/* ============================= */}
 
         <Route
@@ -724,7 +805,7 @@ function App() {
 
 
       {/* ============================= */}
-      {/* LOGIN POPUP */}
+      {/* LOGIN POPUP                   */}
       {/* ============================= */}
 
       {showLogin && (
@@ -738,6 +819,7 @@ function App() {
 
 
     </BrowserRouter>
+
   )
 }
 

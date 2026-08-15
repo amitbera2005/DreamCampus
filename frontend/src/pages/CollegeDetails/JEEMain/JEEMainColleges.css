@@ -1,0 +1,579 @@
+/* ============================= */
+/* JEE MAIN COLLEGE PAGE */
+/* ============================= */
+
+.jee-main-college-page {
+  min-height: 100vh;
+
+  padding: 130px 40px 80px;
+
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(37, 99, 235, 0.16),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 85% 35%,
+      rgba(124, 58, 237, 0.13),
+      transparent 28%
+    ),
+    #020617;
+
+  color: white;
+}
+
+
+/* ============================= */
+/* HEADER */
+/* ============================= */
+
+.jee-main-college-header {
+  width: min(1200px, 100%);
+
+  margin: 0 auto;
+
+  position: relative;
+}
+
+
+.jee-main-heading {
+  text-align: center;
+
+  margin-bottom: 45px;
+}
+
+
+.jee-main-heading > span {
+  color: #60a5fa;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+}
+
+
+.jee-main-heading h1 {
+  margin: 10px 0 0;
+
+  font-size: clamp(40px, 5vw, 58px);
+
+  line-height: 1.05;
+
+  letter-spacing: -2px;
+
+  font-weight: 800;
+
+  background:
+    linear-gradient(
+      90deg,
+      #60a5fa,
+      #818cf8,
+      #c084fc
+    );
+
+  -webkit-background-clip: text;
+
+  background-clip: text;
+
+  color: transparent;
+}
+
+
+.jee-main-heading p {
+  margin-top: 16px;
+
+  color: #94a3b8;
+
+  font-size: 15px;
+
+  line-height: 1.7;
+}
+
+
+/* ============================= */
+/* BACK BUTTON */
+/* ============================= */
+
+.jee-main-back-button {
+  position: absolute;
+
+  top: 5px;
+
+  left: 0;
+
+  padding: 10px 16px;
+
+  border: 1px solid rgba(255, 255, 255, 0.10);
+
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.045);
+
+  color: #94a3b8;
+
+  font-family: inherit;
+
+  font-size: 13px;
+
+  cursor: pointer;
+
+  transition: 0.25s;
+}
+
+
+.jee-main-back-button:hover {
+  transform: translateX(-3px);
+
+  border-color: rgba(96, 165, 250, 0.30);
+
+  background: rgba(255, 255, 255, 0.08);
+
+  color: white;
+}
+
+
+/* ============================= */
+/* SEARCH */
+/* ============================= */
+
+.jee-main-search-section {
+  width: min(850px, 100%);
+
+  margin: 0 auto 45px;
+
+  text-align: center;
+}
+
+
+.jee-main-search-box {
+  position: relative;
+
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  height: 55px;
+
+  padding: 0 48px;
+
+  border: 1px solid rgba(255, 255, 255, 0.10);
+
+  border-radius: 16px;
+
+  background: rgba(255, 255, 255, 0.045);
+
+  backdrop-filter: blur(15px);
+
+  -webkit-backdrop-filter: blur(15px);
+
+  transition: 0.25s;
+}
+
+
+.jee-main-search-box:focus-within {
+  border-color: rgba(96, 165, 250, 0.40);
+
+  background: rgba(255, 255, 255, 0.065);
+
+  box-shadow:
+    0 10px 35px rgba(0, 0, 0, 0.20),
+    0 0 25px rgba(37, 99, 235, 0.08);
+}
+
+
+.jee-main-search-icon {
+  position: absolute;
+
+  left: 18px;
+
+  font-size: 17px;
+
+  opacity: 0.7;
+}
+
+
+.jee-main-search-box input {
+  width: 100%;
+
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  color: white;
+
+  font-family: inherit;
+
+  font-size: 14px;
+}
+
+
+.jee-main-search-box input::placeholder {
+  color: #64748b;
+}
+
+
+.jee-main-search-clear {
+  position: absolute;
+
+  right: 14px;
+
+  width: 30px;
+
+  height: 30px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.06);
+
+  color: #94a3b8;
+
+  font-size: 20px;
+
+  cursor: pointer;
+}
+
+
+.jee-main-search-clear:hover {
+  color: white;
+
+  background: rgba(255, 255, 255, 0.10);
+}
+
+
+.jee-main-result-count {
+  margin-top: 12px;
+
+  color: #475569;
+
+  font-size: 11px;
+}
+
+
+/* ============================= */
+/* COLLEGE GRID */
+/* ============================= */
+
+.jee-main-college-grid {
+  width: min(1200px, 100%);
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 20px;
+}
+
+
+/* ============================= */
+/* COLLEGE CARD */
+/* ============================= */
+
+.jee-main-college-card {
+  position: relative;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(255, 255, 255, 0.10);
+
+  border-radius: 22px;
+
+  background: rgba(255, 255, 255, 0.045);
+
+  backdrop-filter: blur(15px);
+
+  -webkit-backdrop-filter: blur(15px);
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.jee-main-college-card:hover {
+  transform: translateY(-7px);
+
+  border-color: rgba(96, 165, 250, 0.30);
+
+  background: rgba(255, 255, 255, 0.07);
+
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.30),
+    0 0 25px rgba(37, 99, 235, 0.08);
+}
+
+
+/* ============================= */
+/* IMAGE */
+/* ============================= */
+
+.jee-main-college-image {
+  position: relative;
+
+  width: 100%;
+
+  height: 220px;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      145deg,
+      #111c35,
+      #08101f
+    );
+}
+
+
+.jee-main-college-image img {
+  position: relative;
+
+  z-index: 1;
+
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+
+.jee-main-image-placeholder {
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 55px;
+
+  color: #475569;
+
+  z-index: 0;
+}
+
+
+/* ============================= */
+/* COLLEGE INFO */
+/* ============================= */
+
+.jee-main-college-info {
+  position: relative;
+
+  padding: 20px 48px 22px 20px;
+}
+
+
+.jee-main-college-rank {
+  display: inline-block;
+
+  margin-bottom: 8px;
+
+  color: #60a5fa;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+}
+
+
+.jee-main-college-info h2 {
+  margin: 0;
+
+  color: #e2e8f0;
+
+  font-size: 18px;
+
+  line-height: 1.4;
+
+  font-weight: 700;
+}
+
+
+.jee-main-college-info p {
+  margin: 9px 0 0;
+
+  color: #64748b;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+}
+
+
+/* ============================= */
+/* ARROW */
+/* ============================= */
+
+.jee-main-card-arrow {
+  position: absolute;
+
+  right: 18px;
+
+  bottom: 20px;
+
+  color: #818cf8;
+
+  font-size: 23px;
+
+  transition: 0.25s;
+}
+
+
+.jee-main-college-card:hover
+.jee-main-card-arrow {
+  transform: translateX(6px);
+
+  color: #c084fc;
+}
+
+
+/* ============================= */
+/* NO RESULT */
+/* ============================= */
+
+.jee-main-no-result {
+  grid-column: 1 / -1;
+
+  padding: 70px 20px;
+
+  text-align: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 22px;
+
+  background: rgba(255, 255, 255, 0.035);
+}
+
+
+.jee-main-no-result > div {
+  font-size: 35px;
+
+  margin-bottom: 15px;
+}
+
+
+.jee-main-no-result h2 {
+  margin: 0;
+
+  color: #e2e8f0;
+
+  font-size: 21px;
+}
+
+
+.jee-main-no-result p {
+  margin-top: 8px;
+
+  color: #64748b;
+
+  font-size: 13px;
+}
+
+
+.jee-main-no-result button {
+  margin-top: 18px;
+
+  padding: 10px 16px;
+
+  border: 1px solid rgba(255, 255, 255, 0.10);
+
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.05);
+
+  color: #94a3b8;
+
+  cursor: pointer;
+
+  transition: 0.25s;
+}
+
+
+.jee-main-no-result button:hover {
+  background: rgba(255, 255, 255, 0.09);
+
+  color: white;
+}
+
+
+/* ============================= */
+/* TABLET */
+/* ============================= */
+
+@media (max-width: 1000px) {
+
+  .jee-main-college-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+/* ============================= */
+/* MOBILE */
+/* ============================= */
+
+@media (max-width: 650px) {
+
+  .jee-main-college-page {
+    padding: 120px 20px 60px;
+  }
+
+
+  .jee-main-back-button {
+    position: static;
+
+    margin-bottom: 25px;
+  }
+
+
+  .jee-main-heading {
+    margin-bottom: 35px;
+  }
+
+
+  .jee-main-heading h1 {
+    font-size: 40px;
+  }
+
+
+  .jee-main-college-grid {
+    grid-template-columns: 1fr;
+
+    gap: 15px;
+  }
+
+
+  .jee-main-college-image {
+    height: 210px;
+  }
+
+}
