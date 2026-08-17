@@ -1,7 +1,7 @@
 {
   "rewrites": [
     {
-      "source": "/(.*)",
+      "source": "/((?!previous-year-questions/|study-materials/).*)",
       "destination": "/index.html"
     }
   ]
