@@ -11,7 +11,7 @@ import { auth } from '../../firebase/firebase'
 import './Login.css'
 
 
-const API_URL = 'http://localhost:5000/api/auth'
+const API_URL = 'https://dreamcampus.onrender.com/api/auth'
 
 
 function Login({ onLogin }) {
