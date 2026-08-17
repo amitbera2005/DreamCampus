@@ -37,9 +37,9 @@ function PYQExam() {
 
         setLoading(true)
 
-        const response = await fetch(
-          `http://localhost:5000/api/previous-year-questions/exam/${encodeURIComponent(examName)}`
-        )
+const response = await fetch(
+  `https://dreamcampus.onrender.com/api/previous-year-questions/exam/${encodeURIComponent(examName)}`
+)
 
         const result = await response.json()
 
