@@ -79,6 +79,10 @@ import CollegePage
   from './pages/CollegeDetails/CollegePage/CollegePage'
 
 
+import NEETColleges
+  from './pages/CollegeDetails/NEET/NEETColleges'
+
+
 
 /* ============================= */
 /*     SCROLL TO TOP             */
@@ -746,16 +750,24 @@ function App() {
         />
 
 
-        {/* ============================= */}
-        {/* INDIVIDUAL COLLEGE DETAILS    */}
-        {/* ============================= */}
+{/* ============================= */}
+{/* INDIVIDUAL COLLEGE DETAILS    */}
+{/* WBJEE + JEE MAIN              */}
+{/* ============================= */}
 
-        <Route
-          path="/college-details/wbjee/:collegeId"
-          element={<CollegePage />}
-        />
+<Route
+  path="/college-details/:exam/:collegeId"
+  element={<CollegePage />}
+/>
 
+{/* ============================= */}
+{/* NEET COLLEGE LIST             */}
+{/* ============================= */}
 
+<Route
+  path="/college-details/neet"
+  element={<NEETColleges />}
+/>
         {/* ============================= */}
         {/* PROFILE                       */}
         {/* ============================= */}

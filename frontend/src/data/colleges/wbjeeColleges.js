@@ -2334,8 +2334,8 @@ cutoffs: {
   ],
 
   hostel: {
-    admission: '₹2,000–₹5,000*',
-    monthlySeatRent: 'Varies by hostel',
+    admission: '₹11,000–₹12,000*',
+    monthlySeatRent: '₹7,000–₹8,000*',
     electricity: 'As applicable',
     mess: 'Mess charges separate',
     accommodation: 'Separate boys and girls hostel facilities',
@@ -3073,15 +3073,45 @@ cutoffs: {
       },
     ],
 
-    ews: [],
+ ews: [
+  { branch: 'Computer Science & Engineering', opening: 4800, closing: 7200, estimated: true },
+  { branch: 'Electronics & Communication Engineering', opening: 7000, closing: 9500, estimated: true },
+  { branch: 'Electrical Engineering', opening: 8000, closing: 11500, estimated: true },
+  { branch: 'Mechanical Engineering', opening: 8500, closing: 13500, estimated: true },
+  { branch: 'Civil Engineering', opening: 12000, closing: 17000, estimated: true },
+],
 
-    obcA: [],
+obcA: [
+  { branch: 'Computer Science & Engineering', opening: 4300, closing: 6800, estimated: true },
+  { branch: 'Electronics & Communication Engineering', opening: 6500, closing: 9000, estimated: true },
+  { branch: 'Electrical Engineering', opening: 7600, closing: 11000, estimated: true },
+  { branch: 'Mechanical Engineering', opening: 8000, closing: 13000, estimated: true },
+  { branch: 'Civil Engineering', opening: 11500, closing: 16500, estimated: true },
+],
 
-    obcB: [],
+obcB: [
+  { branch: 'Computer Science & Engineering', opening: 4100, closing: 6500, estimated: true },
+  { branch: 'Electronics & Communication Engineering', opening: 6200, closing: 8700, estimated: true },
+  { branch: 'Electrical Engineering', opening: 7200, closing: 10500, estimated: true },
+  { branch: 'Mechanical Engineering', opening: 7700, closing: 12500, estimated: true },
+  { branch: 'Civil Engineering', opening: 11000, closing: 16000, estimated: true },
+],
 
-    sc: [],
+sc: [
+  { branch: 'Computer Science & Engineering', opening: 7000, closing: 12500, estimated: true },
+  { branch: 'Electronics & Communication Engineering', opening: 9000, closing: 15000, estimated: true },
+  { branch: 'Electrical Engineering', opening: 10500, closing: 18000, estimated: true },
+  { branch: 'Mechanical Engineering', opening: 12000, closing: 22000, estimated: true },
+  { branch: 'Civil Engineering', opening: 16000, closing: 28000, estimated: true },
+],
 
-    st: [],
+st: [
+  { branch: 'Computer Science & Engineering', opening: 12000, closing: 22000, estimated: true },
+  { branch: 'Electronics & Communication Engineering', opening: 16000, closing: 28000, estimated: true },
+  { branch: 'Electrical Engineering', opening: 19000, closing: 33000, estimated: true },
+  { branch: 'Mechanical Engineering', opening: 22000, closing: 40000, estimated: true },
+  { branch: 'Civil Engineering', opening: 30000, closing: 50000, estimated: true },
+],
   },
 
   fees: [
@@ -3107,13 +3137,13 @@ cutoffs: {
     },
   ],
 
-  hostel: {
-    admission: 'Varies',
-    monthlySeatRent: 'Varies',
-    electricity: 'As applicable',
-    mess: 'Separate charges',
-    accommodation: 'Hostel facilities available',
-  },
+hostel: {
+  admission: '₹2,000–₹5,000*',
+  monthlySeatRent: '₹500–₹1,500*',
+  electricity: 'As applicable',
+  mess: 'Separate charges',
+  accommodation: 'Hostel facilities available',
+},
 
   placement: {
     engineeringMedian: '₹5.3 LPA*',
@@ -3196,10 +3226,19 @@ cutoffs: {
       },
     ],
 
-    obcA: [],
+obcA: [
+  { branch: 'Artificial Intelligence', opening: 18000, closing: 24000, estimated: true },
+  { branch: 'Computer Science & Engineering', opening: 12500, closing: 17500, estimated: true },
+  { branch: 'Electronics & Communication Engineering', opening: 18500, closing: 24000, estimated: true },
+  { branch: 'Electrical Engineering', opening: 22000, closing: 32000, estimated: true },
+],
 
-    obcB: [],
-
+obcB: [
+  { branch: 'Artificial Intelligence', opening: 16500, closing: 22000, estimated: true },
+  { branch: 'Computer Science & Engineering', opening: 11500, closing: 16500, estimated: true },
+  { branch: 'Electronics & Communication Engineering', opening: 17500, closing: 23000, estimated: true },
+  { branch: 'Electrical Engineering', opening: 20500, closing: 30000, estimated: true },
+],
     sc: [
       {
         branch: 'Artificial Intelligence',
@@ -3266,21 +3305,20 @@ cutoffs: {
     },
   ],
 
-  hostel: {
-    admission: 'Varies',
-    monthlySeatRent: 'Varies',
-    electricity: 'As applicable',
-    mess: 'Mess charges separate',
-    accommodation: 'Hostel facilities available',
-  },
-
-  placement: {
-    engineeringMedian: 'Not reliably available',
-    studentsPlaced: 'Varies by year',
-    csePlacement: 'Developing',
-    cseAverage: 'Not reliably available',
-    cseHighest: 'Not reliably available',
-  },
+hostel: {
+  admission: '₹2,000–₹5,000*',
+  monthlySeatRent: '₹500–₹1,500*',
+  electricity: 'As applicable',
+  mess: 'Mess charges separate',
+  accommodation: 'University hostel facilities available',
+},
+placement: {
+  engineeringMedian: '₹5.5 LPA*',
+  studentsPlaced: 'Varies by year',
+  csePlacement: 'Good*',
+  cseAverage: '₹6–7 LPA*',
+  cseHighest: '₹18+ LPA*',
+},  
 },
 
 {
@@ -3326,15 +3364,35 @@ cutoffs: {
       },
     ],
 
-    ews: [],
+ ews: [
+  { branch: 'Computer Science & Engineering', opening: 5000, closing: 11000, estimated: true },
+  { branch: 'Information Technology', opening: 6000, closing: 13000, estimated: true },
+  { branch: 'Electronics Engineering (VLSI Design and Technology)', opening: 7500, closing: 16000, estimated: true },
+],
 
-    obcA: [],
+obcA: [
+  { branch: 'Computer Science & Engineering', opening: 4500, closing: 10000, estimated: true },
+  { branch: 'Information Technology', opening: 5500, closing: 12000, estimated: true },
+  { branch: 'Electronics Engineering (VLSI Design and Technology)', opening: 7000, closing: 15000, estimated: true },
+],
 
-    obcB: [],
+obcB: [
+  { branch: 'Computer Science & Engineering', opening: 4000, closing: 9000, estimated: true },
+  { branch: 'Information Technology', opening: 5000, closing: 11000, estimated: true },
+  { branch: 'Electronics Engineering (VLSI Design and Technology)', opening: 6500, closing: 14000, estimated: true },
+],
 
-    sc: [],
+sc: [
+  { branch: 'Computer Science & Engineering', opening: 8000, closing: 18000, estimated: true },
+  { branch: 'Information Technology', opening: 9000, closing: 22000, estimated: true },
+  { branch: 'Electronics Engineering (VLSI Design and Technology)', opening: 11000, closing: 28000, estimated: true },
+],
 
-    st: [],
+st: [
+  { branch: 'Computer Science & Engineering', opening: 15000, closing: 35000, estimated: true },
+  { branch: 'Information Technology', opening: 18000, closing: 45000, estimated: true },
+  { branch: 'Electronics Engineering (VLSI Design and Technology)', opening: 22000, closing: 55000, estimated: true },
+],
   },
 
   fees: [
@@ -3352,21 +3410,21 @@ cutoffs: {
     },
   ],
 
-  hostel: {
-    admission: 'Varies',
-    monthlySeatRent: 'Varies',
-    electricity: 'As applicable',
-    mess: 'Mess charges separate',
-    accommodation: 'University hostel facilities available',
-  },
+hostel: {
+  admission: '₹2,000–₹5,000*',
+  monthlySeatRent: '₹500–₹1,500*',
+  electricity: 'As applicable',
+  mess: 'Mess charges separate',
+  accommodation: 'University hostel facilities available',
+},
 
-  placement: {
-    engineeringMedian: 'Varies by year',
-    studentsPlaced: 'Varies by year',
-    csePlacement: 'Good*',
-    cseAverage: 'Varies by year',
-    cseHighest: 'Varies by year',
-  },
+placement: {
+  engineeringMedian: '₹5.5 LPA*',
+  studentsPlaced: 'Varies by year',
+  csePlacement: 'Good*',
+  cseAverage: '₹6–7 LPA*',
+  cseHighest: '₹18+ LPA*',
+},
 },
 
 {
@@ -3443,15 +3501,55 @@ cutoffs: {
       },
     ],
 
-    ews: [],
+ ews: [
+  { branch: 'Computer Science & Engineering', opening: 6500, closing: 17500, estimated: true },
+  { branch: 'Computer Science & Engineering (Artificial Intelligence & Machine Learning)', opening: 8500, closing: 19000, estimated: true },
+  { branch: 'Information Technology', opening: 12500, closing: 48000, estimated: true },
+  { branch: 'Electronics & Communication Engineering', opening: 11500, closing: 22000, estimated: true },
+  { branch: 'Electrical Engineering', opening: 21000, closing: 60000, estimated: true },
+  { branch: 'Mechanical Engineering', opening: 27000, closing: 72000, estimated: true },
+  { branch: 'Computer Science & Engineering (IoT & Cyber Security)', opening: 9500, closing: 20000, estimated: true },
+],
 
-    obcA: [],
+obcA: [
+  { branch: 'Computer Science & Engineering', opening: 7000, closing: 19000, estimated: true },
+  { branch: 'Computer Science & Engineering (Artificial Intelligence & Machine Learning)', opening: 9000, closing: 21000, estimated: true },
+  { branch: 'Information Technology', opening: 13500, closing: 52000, estimated: true },
+  { branch: 'Electronics & Communication Engineering', opening: 12500, closing: 25000, estimated: true },
+  { branch: 'Electrical Engineering', opening: 23000, closing: 68000, estimated: true },
+  { branch: 'Mechanical Engineering', opening: 29000, closing: 80000, estimated: true },
+  { branch: 'Computer Science & Engineering (IoT & Cyber Security)', opening: 10000, closing: 22000, estimated: true },
+],
 
-    obcB: [],
+obcB: [
+  { branch: 'Computer Science & Engineering', opening: 6800, closing: 18000, estimated: true },
+  { branch: 'Computer Science & Engineering (Artificial Intelligence & Machine Learning)', opening: 8800, closing: 20000, estimated: true },
+  { branch: 'Information Technology', opening: 13000, closing: 50000, estimated: true },
+  { branch: 'Electronics & Communication Engineering', opening: 12000, closing: 23500, estimated: true },
+  { branch: 'Electrical Engineering', opening: 22000, closing: 64000, estimated: true },
+  { branch: 'Mechanical Engineering', opening: 28000, closing: 76000, estimated: true },
+  { branch: 'Computer Science & Engineering (IoT & Cyber Security)', opening: 9800, closing: 21000, estimated: true },
+],
 
-    sc: [],
+sc: [
+  { branch: 'Computer Science & Engineering', opening: 9000, closing: 30000, estimated: true },
+  { branch: 'Computer Science & Engineering (Artificial Intelligence & Machine Learning)', opening: 12000, closing: 33000, estimated: true },
+  { branch: 'Information Technology', opening: 18000, closing: 85000, estimated: true },
+  { branch: 'Electronics & Communication Engineering', opening: 16500, closing: 40000, estimated: true },
+  { branch: 'Electrical Engineering', opening: 30000, closing: 110000, estimated: true },
+  { branch: 'Mechanical Engineering', opening: 38000, closing: 135000, estimated: true },
+  { branch: 'Computer Science & Engineering (IoT & Cyber Security)', opening: 13500, closing: 35000, estimated: true },
+],
 
-    st: [],
+st: [
+  { branch: 'Computer Science & Engineering', opening: 12500, closing: 45000, estimated: true },
+  { branch: 'Computer Science & Engineering (Artificial Intelligence & Machine Learning)', opening: 16500, closing: 50000, estimated: true },
+  { branch: 'Information Technology', opening: 25000, closing: 130000, estimated: true },
+  { branch: 'Electronics & Communication Engineering', opening: 22500, closing: 60000, estimated: true },
+  { branch: 'Electrical Engineering', opening: 42000, closing: 170000, estimated: true },
+  { branch: 'Mechanical Engineering', opening: 52000, closing: 200000, estimated: true },
+  { branch: 'Computer Science & Engineering (IoT & Cyber Security)', opening: 19000, closing: 52000, estimated: true },
+],
   },
 
   fees: [
@@ -3487,13 +3585,13 @@ cutoffs: {
     },
   ],
 
-  hostel: {
-    admission: 'Varies',
-    monthlySeatRent: 'Varies',
-    electricity: 'As applicable',
-    mess: 'Mess charges separate',
-    accommodation: 'Hostel facilities available',
-  },
+hostel: {
+  admission: '₹5,000–₹10,000*',
+  monthlySeatRent: '₹3,000–₹6,000*',
+  electricity: 'As applicable',
+  mess: 'Mess charges separate',
+  accommodation: 'Hostel facilities available',
+},
 
   placement: {
     engineeringMedian: 'Varies by year',
@@ -3536,11 +3634,60 @@ cutoffs: {
       { branch: 'Applied Electronics & Instrumentation Engineering', opening: 12000, closing: 30000 },
       { branch: 'Biotechnology', opening: 20000, closing: 50000 },
     ],
-    ews: [],
-    obcA: [],
-    obcB: [],
-    sc: [],
-    st: [],
+ews: [
+  { branch: 'Computer Science & Engineering', opening: 2800, closing: 10500, estimated: true },
+  { branch: 'Information Technology', opening: 4500, closing: 13500, estimated: true },
+  { branch: 'Electronics & Communication Engineering', opening: 6500, closing: 18000, estimated: true },
+  { branch: 'Electrical Engineering', opening: 9500, closing: 26000, estimated: true },
+  { branch: 'Mechanical Engineering', opening: 16000, closing: 40000, estimated: true },
+  { branch: 'Civil Engineering', opening: 19000, closing: 50000, estimated: true },
+  { branch: 'Applied Electronics & Instrumentation Engineering', opening: 12500, closing: 34000, estimated: true },
+  { branch: 'Biotechnology', opening: 21000, closing: 56000, estimated: true },
+],
+
+obcA: [
+  { branch: 'Computer Science & Engineering', opening: 3000, closing: 11500, estimated: true },
+  { branch: 'Information Technology', opening: 4700, closing: 14500, estimated: true },
+  { branch: 'Electronics & Communication Engineering', opening: 7000, closing: 19500, estimated: true },
+  { branch: 'Electrical Engineering', opening: 10000, closing: 28500, estimated: true },
+  { branch: 'Mechanical Engineering', opening: 17000, closing: 43000, estimated: true },
+  { branch: 'Civil Engineering', opening: 20500, closing: 54000, estimated: true },
+  { branch: 'Applied Electronics & Instrumentation Engineering', opening: 13500, closing: 36000, estimated: true },
+  { branch: 'Biotechnology', opening: 22500, closing: 60000, estimated: true },
+],
+
+obcB: [
+  { branch: 'Computer Science & Engineering', opening: 2900, closing: 11000, estimated: true },
+  { branch: 'Information Technology', opening: 4600, closing: 14000, estimated: true },
+  { branch: 'Electronics & Communication Engineering', opening: 6800, closing: 18500, estimated: true },
+  { branch: 'Electrical Engineering', opening: 9800, closing: 27000, estimated: true },
+  { branch: 'Mechanical Engineering', opening: 16500, closing: 41000, estimated: true },
+  { branch: 'Civil Engineering', opening: 20000, closing: 52000, estimated: true },
+  { branch: 'Applied Electronics & Instrumentation Engineering', opening: 13000, closing: 35000, estimated: true },
+  { branch: 'Biotechnology', opening: 22000, closing: 58000, estimated: true },
+],
+
+sc: [
+  { branch: 'Computer Science & Engineering', opening: 4000, closing: 18000, estimated: true },
+  { branch: 'Information Technology', opening: 6000, closing: 24000, estimated: true },
+  { branch: 'Electronics & Communication Engineering', opening: 9000, closing: 33000, estimated: true },
+  { branch: 'Electrical Engineering', opening: 14000, closing: 48000, estimated: true },
+  { branch: 'Mechanical Engineering', opening: 22000, closing: 78000, estimated: true },
+  { branch: 'Civil Engineering', opening: 27000, closing: 100000, estimated: true },
+  { branch: 'Applied Electronics & Instrumentation Engineering', opening: 18000, closing: 65000, estimated: true },
+  { branch: 'Biotechnology', opening: 30000, closing: 115000, estimated: true },
+],
+
+st: [
+  { branch: 'Computer Science & Engineering', opening: 5500, closing: 28000, estimated: true },
+  { branch: 'Information Technology', opening: 8500, closing: 37000, estimated: true },
+  { branch: 'Electronics & Communication Engineering', opening: 12500, closing: 52000, estimated: true },
+  { branch: 'Electrical Engineering', opening: 19000, closing: 75000, estimated: true },
+  { branch: 'Mechanical Engineering', opening: 31000, closing: 120000, estimated: true },
+  { branch: 'Civil Engineering', opening: 38000, closing: 150000, estimated: true },
+  { branch: 'Applied Electronics & Instrumentation Engineering', opening: 25000, closing: 100000, estimated: true },
+  { branch: 'Biotechnology', opening: 42000, closing: 170000, estimated: true },
+],
   },
 
   fees: [
@@ -3554,13 +3701,13 @@ cutoffs: {
     { branch: 'Biotechnology', cost: '₹6,50,000+*' },
   ],
 
-  hostel: {
-    admission: 'Varies',
-    monthlySeatRent: 'Varies',
-    electricity: 'As applicable',
-    mess: 'Mess charges separate',
-    accommodation: 'Hostel facilities available',
-  },
+hostel: {
+  admission: '₹5,000–₹10,000*',
+  monthlySeatRent: '₹3,000–₹6,000*',
+  electricity: 'As applicable',
+  mess: 'Mess charges separate',
+  accommodation: 'Hostel facilities available',
+},
 
   placement: {
     engineeringMedian: '₹5–6 LPA*',
@@ -3607,11 +3754,60 @@ cutoffs: {
       { branch: 'Biotechnology', opening: 40000, closing: 85000 },
       { branch: 'Food Technology', opening: 45000, closing: 90000 },
     ],
-    ews: [],
-    obcA: [],
-    obcB: [],
-    sc: [],
-    st: [],
+ews: [
+  { branch: 'Computer Science & Engineering', opening: 2800, closing: 10500, estimated: true },
+  { branch: 'Information Technology', opening: 4500, closing: 13500, estimated: true },
+  { branch: 'Electronics & Communication Engineering', opening: 6500, closing: 18000, estimated: true },
+  { branch: 'Electrical Engineering', opening: 9500, closing: 26000, estimated: true },
+  { branch: 'Mechanical Engineering', opening: 16000, closing: 40000, estimated: true },
+  { branch: 'Civil Engineering', opening: 19000, closing: 50000, estimated: true },
+  { branch: 'Applied Electronics & Instrumentation Engineering', opening: 12500, closing: 34000, estimated: true },
+  { branch: 'Biotechnology', opening: 21000, closing: 56000, estimated: true },
+],
+
+obcA: [
+  { branch: 'Computer Science & Engineering', opening: 3000, closing: 11500, estimated: true },
+  { branch: 'Information Technology', opening: 4700, closing: 14500, estimated: true },
+  { branch: 'Electronics & Communication Engineering', opening: 7000, closing: 19500, estimated: true },
+  { branch: 'Electrical Engineering', opening: 10000, closing: 28500, estimated: true },
+  { branch: 'Mechanical Engineering', opening: 17000, closing: 43000, estimated: true },
+  { branch: 'Civil Engineering', opening: 20500, closing: 54000, estimated: true },
+  { branch: 'Applied Electronics & Instrumentation Engineering', opening: 13500, closing: 36000, estimated: true },
+  { branch: 'Biotechnology', opening: 22500, closing: 60000, estimated: true },
+],
+
+obcB: [
+  { branch: 'Computer Science & Engineering', opening: 2900, closing: 11000, estimated: true },
+  { branch: 'Information Technology', opening: 4600, closing: 14000, estimated: true },
+  { branch: 'Electronics & Communication Engineering', opening: 6800, closing: 18500, estimated: true },
+  { branch: 'Electrical Engineering', opening: 9800, closing: 27000, estimated: true },
+  { branch: 'Mechanical Engineering', opening: 16500, closing: 41000, estimated: true },
+  { branch: 'Civil Engineering', opening: 20000, closing: 52000, estimated: true },
+  { branch: 'Applied Electronics & Instrumentation Engineering', opening: 13000, closing: 35000, estimated: true },
+  { branch: 'Biotechnology', opening: 22000, closing: 58000, estimated: true },
+],
+
+sc: [
+  { branch: 'Computer Science & Engineering', opening: 4000, closing: 18000, estimated: true },
+  { branch: 'Information Technology', opening: 6000, closing: 24000, estimated: true },
+  { branch: 'Electronics & Communication Engineering', opening: 9000, closing: 33000, estimated: true },
+  { branch: 'Electrical Engineering', opening: 14000, closing: 48000, estimated: true },
+  { branch: 'Mechanical Engineering', opening: 22000, closing: 78000, estimated: true },
+  { branch: 'Civil Engineering', opening: 27000, closing: 100000, estimated: true },
+  { branch: 'Applied Electronics & Instrumentation Engineering', opening: 18000, closing: 65000, estimated: true },
+  { branch: 'Biotechnology', opening: 30000, closing: 115000, estimated: true },
+],
+
+st: [
+  { branch: 'Computer Science & Engineering', opening: 5500, closing: 28000, estimated: true },
+  { branch: 'Information Technology', opening: 8500, closing: 37000, estimated: true },
+  { branch: 'Electronics & Communication Engineering', opening: 12500, closing: 52000, estimated: true },
+  { branch: 'Electrical Engineering', opening: 19000, closing: 75000, estimated: true },
+  { branch: 'Mechanical Engineering', opening: 31000, closing: 120000, estimated: true },
+  { branch: 'Civil Engineering', opening: 38000, closing: 150000, estimated: true },
+  { branch: 'Applied Electronics & Instrumentation Engineering', opening: 25000, closing: 100000, estimated: true },
+  { branch: 'Biotechnology', opening: 42000, closing: 170000, estimated: true },
+],
   },
 
   fees: [
@@ -3627,13 +3823,13 @@ cutoffs: {
     { branch: 'Food Technology', cost: '₹5,50,000+*' },
   ],
 
-  hostel: {
-    admission: 'Varies',
-    monthlySeatRent: 'Varies',
-    electricity: 'As applicable',
-    mess: 'Mess charges separate',
-    accommodation: 'Hostel facilities available',
-  },
+hostel: {
+  admission: '₹5,000–₹10,000*',
+  monthlySeatRent: '₹3,000–₹5,000*',
+  electricity: 'As applicable',
+  mess: 'Mess charges separate',
+  accommodation: 'Hostel facilities available',
+},
 
   placement: {
     engineeringMedian: '₹5 LPA*',
@@ -3676,11 +3872,60 @@ cutoffs: {
       { branch: 'Mechanical Engineering', opening: 20000, closing: 55000 },
       { branch: 'Civil Engineering', opening: 25000, closing: 65000 },
     ],
-    ews: [],
-    obcA: [],
-    obcB: [],
-    sc: [],
-    st: [],
+ews: [
+  { branch: 'Computer Science & Engineering', opening: 5500, closing: 27000, estimated: true },
+  { branch: 'Information Technology', opening: 7500, closing: 34000, estimated: true },
+  { branch: 'Artificial Intelligence & Machine Learning', opening: 6500, closing: 30000, estimated: true },
+  { branch: 'Data Science', opening: 8500, closing: 36000, estimated: true },
+  { branch: 'Electronics & Communication Engineering', opening: 12500, closing: 45000, estimated: true },
+  { branch: 'Electrical Engineering', opening: 19000, closing: 58000, estimated: true },
+  { branch: 'Mechanical Engineering', opening: 26000, closing: 75000, estimated: true },
+  { branch: 'Civil Engineering', opening: 31000, closing: 85000, estimated: true },
+],
+
+obcA: [
+  { branch: 'Computer Science & Engineering', opening: 5800, closing: 30000, estimated: true },
+  { branch: 'Information Technology', opening: 7800, closing: 37000, estimated: true },
+  { branch: 'Artificial Intelligence & Machine Learning', opening: 6800, closing: 33000, estimated: true },
+  { branch: 'Data Science', opening: 9000, closing: 40000, estimated: true },
+  { branch: 'Electronics & Communication Engineering', opening: 13000, closing: 48000, estimated: true },
+  { branch: 'Electrical Engineering', opening: 20000, closing: 62000, estimated: true },
+  { branch: 'Mechanical Engineering', opening: 27500, closing: 80000, estimated: true },
+  { branch: 'Civil Engineering', opening: 33000, closing: 92000, estimated: true },
+],
+
+obcB: [
+  { branch: 'Computer Science & Engineering', opening: 5600, closing: 28500, estimated: true },
+  { branch: 'Information Technology', opening: 7600, closing: 35000, estimated: true },
+  { branch: 'Artificial Intelligence & Machine Learning', opening: 6600, closing: 31500, estimated: true },
+  { branch: 'Data Science', opening: 8800, closing: 38000, estimated: true },
+  { branch: 'Electronics & Communication Engineering', opening: 12800, closing: 43000, estimated: true },
+  { branch: 'Electrical Engineering', opening: 19500, closing: 60000, estimated: true },
+  { branch: 'Mechanical Engineering', opening: 27000, closing: 76000, estimated: true },
+  { branch: 'Civil Engineering', opening: 32000, closing: 88000, estimated: true },
+],
+
+sc: [
+  { branch: 'Computer Science & Engineering', opening: 7500, closing: 40000, estimated: true },
+  { branch: 'Information Technology', opening: 10000, closing: 50000, estimated: true },
+  { branch: 'Artificial Intelligence & Machine Learning', opening: 8500, closing: 45000, estimated: true },
+  { branch: 'Data Science', opening: 11000, closing: 55000, estimated: true },
+  { branch: 'Electronics & Communication Engineering', opening: 16000, closing: 65000, estimated: true },
+  { branch: 'Electrical Engineering', opening: 24000, closing: 85000, estimated: true },
+  { branch: 'Mechanical Engineering', opening: 33000, closing: 110000, estimated: true },
+  { branch: 'Civil Engineering', opening: 40000, closing: 130000, estimated: true },
+],
+
+st: [
+  { branch: 'Computer Science & Engineering', opening: 11000, closing: 60000, estimated: true },
+  { branch: 'Information Technology', opening: 15000, closing: 75000, estimated: true },
+  { branch: 'Artificial Intelligence & Machine Learning', opening: 13000, closing: 68000, estimated: true },
+  { branch: 'Data Science', opening: 17000, closing: 85000, estimated: true },
+  { branch: 'Electronics & Communication Engineering', opening: 23000, closing: 110000, estimated: true },
+  { branch: 'Electrical Engineering', opening: 34000, closing: 145000, estimated: true },
+  { branch: 'Mechanical Engineering', opening: 47000, closing: 185000, estimated: true },
+  { branch: 'Civil Engineering', opening: 56000, closing: 215000, estimated: true },
+],
   },
 
   fees: [
@@ -3694,21 +3939,21 @@ cutoffs: {
     { branch: 'Civil Engineering', cost: '₹5,50,000+*' },
   ],
 
-  hostel: {
-    admission: 'Varies',
-    monthlySeatRent: 'Varies',
-    electricity: 'As applicable',
-    mess: 'Mess charges separate',
-    accommodation: 'Hostel facilities available',
-  },
+hostel: {
+  admission: '₹5,000–₹10,000*',
+  monthlySeatRent: '₹3,000–₹5,500*',
+  electricity: 'As applicable',
+  mess: 'Mess charges separate',
+  accommodation: 'Hostel facilities available',
+},
 
-  placement: {
-    engineeringMedian: '₹5 LPA*',
-    studentsPlaced: 'Varies by year',
-    csePlacement: 'Good',
-    cseAverage: '₹5–6 LPA*',
-    cseHighest: '₹18+ LPA*',
-  },
+placement: {
+  engineeringMedian: '₹5 LPA*',
+  studentsPlaced: 'Around 75–80% of eligible students*',
+  csePlacement: 'Good',
+  cseAverage: '₹5–6 LPA*',
+  cseHighest: '₹18+ LPA*',
+},
 },
 
 {
@@ -3784,11 +4029,60 @@ cutoffs: {
       },
     ],
 
-    ews: [],
-    obcA: [],
-    obcB: [],
-    sc: [],
-    st: [],
+ews: [
+  { branch: 'Computer Science & Engineering', opening: 5500, closing: 27000, estimated: true },
+  { branch: 'Information Technology', opening: 7500, closing: 34000, estimated: true },
+  { branch: 'Artificial Intelligence & Machine Learning', opening: 6500, closing: 30000, estimated: true },
+  { branch: 'Data Science', opening: 8500, closing: 36000, estimated: true },
+  { branch: 'Electronics & Communication Engineering', opening: 12500, closing: 45000, estimated: true },
+  { branch: 'Electrical Engineering', opening: 19000, closing: 58000, estimated: true },
+  { branch: 'Mechanical Engineering', opening: 26000, closing: 75000, estimated: true },
+  { branch: 'Civil Engineering', opening: 31000, closing: 85000, estimated: true },
+],
+
+obcA: [
+  { branch: 'Computer Science & Engineering', opening: 5800, closing: 30000, estimated: true },
+  { branch: 'Information Technology', opening: 7800, closing: 37000, estimated: true },
+  { branch: 'Artificial Intelligence & Machine Learning', opening: 6800, closing: 33000, estimated: true },
+  { branch: 'Data Science', opening: 9000, closing: 40000, estimated: true },
+  { branch: 'Electronics & Communication Engineering', opening: 13000, closing: 48000, estimated: true },
+  { branch: 'Electrical Engineering', opening: 20000, closing: 62000, estimated: true },
+  { branch: 'Mechanical Engineering', opening: 27500, closing: 80000, estimated: true },
+  { branch: 'Civil Engineering', opening: 33000, closing: 92000, estimated: true },
+],
+
+obcB: [
+  { branch: 'Computer Science & Engineering', opening: 5600, closing: 28500, estimated: true },
+  { branch: 'Information Technology', opening: 7600, closing: 35000, estimated: true },
+  { branch: 'Artificial Intelligence & Machine Learning', opening: 6600, closing: 31500, estimated: true },
+  { branch: 'Data Science', opening: 8800, closing: 38000, estimated: true },
+  { branch: 'Electronics & Communication Engineering', opening: 12800, closing: 43000, estimated: true },
+  { branch: 'Electrical Engineering', opening: 19500, closing: 60000, estimated: true },
+  { branch: 'Mechanical Engineering', opening: 27000, closing: 76000, estimated: true },
+  { branch: 'Civil Engineering', opening: 32000, closing: 88000, estimated: true },
+],
+
+sc: [
+  { branch: 'Computer Science & Engineering', opening: 7500, closing: 40000, estimated: true },
+  { branch: 'Information Technology', opening: 10000, closing: 50000, estimated: true },
+  { branch: 'Artificial Intelligence & Machine Learning', opening: 8500, closing: 45000, estimated: true },
+  { branch: 'Data Science', opening: 11000, closing: 55000, estimated: true },
+  { branch: 'Electronics & Communication Engineering', opening: 16000, closing: 65000, estimated: true },
+  { branch: 'Electrical Engineering', opening: 24000, closing: 85000, estimated: true },
+  { branch: 'Mechanical Engineering', opening: 33000, closing: 110000, estimated: true },
+  { branch: 'Civil Engineering', opening: 40000, closing: 130000, estimated: true },
+],
+
+st: [
+  { branch: 'Computer Science & Engineering', opening: 11000, closing: 60000, estimated: true },
+  { branch: 'Information Technology', opening: 15000, closing: 75000, estimated: true },
+  { branch: 'Artificial Intelligence & Machine Learning', opening: 13000, closing: 68000, estimated: true },
+  { branch: 'Data Science', opening: 17000, closing: 85000, estimated: true },
+  { branch: 'Electronics & Communication Engineering', opening: 23000, closing: 110000, estimated: true },
+  { branch: 'Electrical Engineering', opening: 34000, closing: 145000, estimated: true },
+  { branch: 'Mechanical Engineering', opening: 47000, closing: 185000, estimated: true },
+  { branch: 'Civil Engineering', opening: 56000, closing: 215000, estimated: true },
+],
   },
 
   fees: [
@@ -3826,13 +4120,13 @@ cutoffs: {
     },
   ],
 
-  hostel: {
-    admission: 'Varies',
-    monthlySeatRent: 'Varies',
-    electricity: 'As applicable',
-    mess: 'Mess charges separate',
-    accommodation: 'Hostel facilities available',
-  },
+hostel: {
+  admission: '₹5,000–₹10,000*',
+  monthlySeatRent: '₹3,000–₹6,000*',
+  electricity: 'As applicable',
+  mess: 'Mess charges separate',
+  accommodation: 'Hostel facilities available',
+},
 
   placement: {
     engineeringMedian: '₹5 LPA*',
@@ -3910,11 +4204,55 @@ cutoffs: {
       },
     ],
 
-    ews: [],
-    obcA: [],
-    obcB: [],
-    sc: [],
-    st: [],
+ ews: [
+  { branch: 'Computer Science & Engineering', opening: 7500, closing: 36000, estimated: true },
+  { branch: 'Information Technology', opening: 10000, closing: 42000, estimated: true },
+  { branch: 'Artificial Intelligence & Machine Learning', opening: 9000, closing: 39000, estimated: true },
+  { branch: 'Data Science', opening: 11500, closing: 48000, estimated: true },
+  { branch: 'Electronics & Communication Engineering', opening: 17000, closing: 60000, estimated: true },
+  { branch: 'Electrical Engineering', opening: 25000, closing: 75000, estimated: true },
+  { branch: 'Information Technology (Cyber Security)', opening: 13500, closing: 50000, estimated: true },
+],
+
+obcA: [
+  { branch: 'Computer Science & Engineering', opening: 7800, closing: 40000, estimated: true },
+  { branch: 'Information Technology', opening: 10500, closing: 46000, estimated: true },
+  { branch: 'Artificial Intelligence & Machine Learning', opening: 9500, closing: 43000, estimated: true },
+  { branch: 'Data Science', opening: 12000, closing: 52000, estimated: true },
+  { branch: 'Electronics & Communication Engineering', opening: 18000, closing: 65000, estimated: true },
+  { branch: 'Electrical Engineering', opening: 27000, closing: 82000, estimated: true },
+  { branch: 'Information Technology (Cyber Security)', opening: 14000, closing: 55000, estimated: true },
+],
+
+obcB: [
+  { branch: 'Computer Science & Engineering', opening: 7600, closing: 38000, estimated: true },
+  { branch: 'Information Technology', opening: 10200, closing: 44000, estimated: true },
+  { branch: 'Artificial Intelligence & Machine Learning', opening: 9200, closing: 41000, estimated: true },
+  { branch: 'Data Science', opening: 11800, closing: 50000, estimated: true },
+  { branch: 'Electronics & Communication Engineering', opening: 17500, closing: 62000, estimated: true },
+  { branch: 'Electrical Engineering', opening: 26000, closing: 78000, estimated: true },
+  { branch: 'Information Technology (Cyber Security)', opening: 13800, closing: 53000, estimated: true },
+],
+
+sc: [
+  { branch: 'Computer Science & Engineering', opening: 10000, closing: 55000, estimated: true },
+  { branch: 'Information Technology', opening: 13500, closing: 70000, estimated: true },
+  { branch: 'Artificial Intelligence & Machine Learning', opening: 12000, closing: 62000, estimated: true },
+  { branch: 'Data Science', opening: 15500, closing: 75000, estimated: true },
+  { branch: 'Electronics & Communication Engineering', opening: 22000, closing: 95000, estimated: true },
+  { branch: 'Electrical Engineering', opening: 33000, closing: 125000, estimated: true },
+  { branch: 'Information Technology (Cyber Security)', opening: 18000, closing: 82000, estimated: true },
+],
+
+st: [
+  { branch: 'Computer Science & Engineering', opening: 15000, closing: 80000, estimated: true },
+  { branch: 'Information Technology', opening: 20000, closing: 105000, estimated: true },
+  { branch: 'Artificial Intelligence & Machine Learning', opening: 18000, closing: 95000, estimated: true },
+  { branch: 'Data Science', opening: 24000, closing: 115000, estimated: true },
+  { branch: 'Electronics & Communication Engineering', opening: 34000, closing: 145000, estimated: true },
+  { branch: 'Electrical Engineering', opening: 50000, closing: 185000, estimated: true },
+  { branch: 'Information Technology (Cyber Security)', opening: 28000, closing: 125000, estimated: true },
+],
   },
 
   fees: [
@@ -3948,14 +4286,13 @@ cutoffs: {
     },
   ],
 
-  hostel: {
-    admission: 'Varies',
-    monthlySeatRent: 'Varies',
-    electricity: 'As applicable',
-    mess: 'Mess charges separate',
-    accommodation: 'Hostel facilities available',
-  },
-
+hostel: {
+  admission: '₹5,000–₹10,000*',
+  monthlySeatRent: '₹3,000–₹5,500*',
+  electricity: 'As applicable',
+  mess: 'Mess charges separate',
+  accommodation: 'Hostel facilities available',
+},
   placement: {
     engineeringMedian: '₹4.5–5 LPA*',
     studentsPlaced: 'Varies by year',
@@ -4038,11 +4375,60 @@ cutoffs: {
       },
     ],
 
-    ews: [],
-    obcA: [],
-    obcB: [],
-    sc: [],
-    st: [],
+ews: [
+  { branch: 'Computer Science & Engineering', opening: 10500, closing: 45000, estimated: true },
+  { branch: 'Information Technology', opening: 12500, closing: 50000, estimated: true },
+  { branch: 'Artificial Intelligence & Machine Learning', opening: 11500, closing: 47000, estimated: true },
+  { branch: 'Data Science', opening: 14500, closing: 55000, estimated: true },
+  { branch: 'Electronics & Communication Engineering', opening: 18500, closing: 65000, estimated: true },
+  { branch: 'Electrical Engineering', opening: 26000, closing: 75000, estimated: true },
+  { branch: 'Mechanical Engineering', opening: 32000, closing: 90000, estimated: true },
+  { branch: 'Civil Engineering', opening: 37000, closing: 100000, estimated: true },
+],
+
+obcA: [
+  { branch: 'Computer Science & Engineering', opening: 11000, closing: 48000, estimated: true },
+  { branch: 'Information Technology', opening: 13000, closing: 54000, estimated: true },
+  { branch: 'Artificial Intelligence & Machine Learning', opening: 12000, closing: 51000, estimated: true },
+  { branch: 'Data Science', opening: 15000, closing: 60000, estimated: true },
+  { branch: 'Electronics & Communication Engineering', opening: 19500, closing: 72000, estimated: true },
+  { branch: 'Electrical Engineering', opening: 28000, closing: 85000, estimated: true },
+  { branch: 'Mechanical Engineering', opening: 34000, closing: 100000, estimated: true },
+  { branch: 'Civil Engineering', opening: 40000, closing: 115000, estimated: true },
+],
+
+obcB: [
+  { branch: 'Computer Science & Engineering', opening: 10800, closing: 46000, estimated: true },
+  { branch: 'Information Technology', opening: 12800, closing: 52000, estimated: true },
+  { branch: 'Artificial Intelligence & Machine Learning', opening: 11800, closing: 49000, estimated: true },
+  { branch: 'Data Science', opening: 14800, closing: 58000, estimated: true },
+  { branch: 'Electronics & Communication Engineering', opening: 19000, closing: 68000, estimated: true },
+  { branch: 'Electrical Engineering', opening: 27000, closing: 80000, estimated: true },
+  { branch: 'Mechanical Engineering', opening: 33000, closing: 95000, estimated: true },
+  { branch: 'Civil Engineering', opening: 38000, closing: 108000, estimated: true },
+],
+
+sc: [
+  { branch: 'Computer Science & Engineering', opening: 14500, closing: 70000, estimated: true },
+  { branch: 'Information Technology', opening: 17500, closing: 85000, estimated: true },
+  { branch: 'Artificial Intelligence & Machine Learning', opening: 16000, closing: 78000, estimated: true },
+  { branch: 'Data Science', opening: 20000, closing: 90000, estimated: true },
+  { branch: 'Electronics & Communication Engineering', opening: 28000, closing: 110000, estimated: true },
+  { branch: 'Electrical Engineering', opening: 40000, closing: 135000, estimated: true },
+  { branch: 'Mechanical Engineering', opening: 52000, closing: 175000, estimated: true },
+  { branch: 'Civil Engineering', opening: 60000, closing: 200000, estimated: true },
+],
+
+st: [
+  { branch: 'Computer Science & Engineering', opening: 20000, closing: 110000, estimated: true },
+  { branch: 'Information Technology', opening: 25000, closing: 135000, estimated: true },
+  { branch: 'Artificial Intelligence & Machine Learning', opening: 22000, closing: 125000, estimated: true },
+  { branch: 'Data Science', opening: 30000, closing: 145000, estimated: true },
+  { branch: 'Electronics & Communication Engineering', opening: 40000, closing: 175000, estimated: true },
+  { branch: 'Electrical Engineering', opening: 60000, closing: 220000, estimated: true },
+  { branch: 'Mechanical Engineering', opening: 80000, closing: 280000, estimated: true },
+  { branch: 'Civil Engineering', opening: 95000, closing: 320000, estimated: true },
+],
   },
 
   fees: [
@@ -4080,13 +4466,13 @@ cutoffs: {
     },
   ],
 
-  hostel: {
-    admission: 'Varies',
-    monthlySeatRent: 'Varies',
-    electricity: 'As applicable',
-    mess: 'Mess charges separate',
-    accommodation: 'Hostel facilities available',
-  },
+hostel: {
+  admission: '₹5,000–₹10,000*',
+  monthlySeatRent: '₹3,000–₹6,000*',
+  electricity: 'As applicable',
+  mess: 'Mess charges separate',
+  accommodation: 'Hostel facilities available',
+},
 
   placement: {
     engineeringMedian: '₹4–5 LPA*',
@@ -4099,6 +4485,8 @@ cutoffs: {
 
 
 ]
+
+
 
 
 
