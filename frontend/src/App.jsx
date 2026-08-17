@@ -78,10 +78,8 @@ import JEEMainColleges
 import CollegePage
   from './pages/CollegeDetails/CollegePage/CollegePage'
 
-
 import NEETColleges
   from './pages/CollegeDetails/NEET/NEETColleges'
-
 
 
 /* ============================= */
@@ -106,7 +104,6 @@ function ScrollToTop() {
 
   return null
 }
-
 
 
 /* ============================= */
@@ -194,7 +191,6 @@ function ProtectedPage({
 }
 
 
-
 /* ============================= */
 /*   PROTECTED COMPONENT PAGE    */
 /* ============================= */
@@ -256,12 +252,32 @@ function ProtectedComponent({
 }
 
 
-
 /* ============================= */
 /*            APP                */
 /* ============================= */
 
 function App() {
+
+  return (
+
+    <BrowserRouter>
+
+      <AppContent />
+
+    </BrowserRouter>
+
+  )
+}
+
+
+/* ============================= */
+/*         APP CONTENT           */
+/* ============================= */
+
+function AppContent() {
+
+  const navigate = useNavigate()
+
 
   /*
    * =============================
@@ -286,9 +302,6 @@ function App() {
    * =============================
    * STUDENT DATA
    * =============================
-   *
-   * Refresh hole localStorage
-   * theke student data load hobe.
    */
 
   const [student, setStudent] = useState(() => {
@@ -316,26 +329,28 @@ function App() {
 
   /*
    * =============================
-   * LOGIN POPUP
-   * =============================
-   */
-
-  const [showLogin, setShowLogin] = useState(false)
-
-
-  /*
-   * =============================
    * PROFILE PICTURE
    * =============================
    */
 
-  const [profilePic, setProfilePic] = useState(
+const [profilePic, setProfilePic] = useState(null)
 
-    localStorage.getItem(
-      'dreamCampusProfilePic'
-    ) || null
+useEffect(() => {
 
-  )
+  if (!student?.userId) {
+    setProfilePic(null)
+    return
+  }
+
+  const profilePicKey =
+    `dreamCampusProfilePic_${student.userId}`
+
+  const savedProfilePic =
+    localStorage.getItem(profilePicKey)
+
+  setProfilePic(savedProfilePic || null)
+
+}, [student])
 
 
   /* ============================= */
@@ -352,36 +367,35 @@ function App() {
 
     setStudent(studentData)
 
+
     setIsLoggedIn(true)
 
-    setShowLogin(false)
+
+    navigate('/')
 
   }
-
 
 
   /* ============================= */
   /* LOGOUT */
   /* ============================= */
 
-  const handleLogout = () => {
+const handleLogout = () => {
 
-    localStorage.removeItem(
-      'dreamCampusStudent'
-    )
+  localStorage.removeItem('dreamCampusStudent')
 
+  setStudent(null)
 
-    setStudent(null)
+  setIsLoggedIn(false)
 
-    setIsLoggedIn(false)
+  setProfilePic(null)
 
-  }
-
-
+  navigate('/')
+}
 
   return (
 
-    <BrowserRouter>
+    <>
 
       {/* ============================= */}
       {/* SCROLL TO TOP                  */}
@@ -397,9 +411,10 @@ function App() {
       <Navbar
         isLoggedIn={isLoggedIn}
         student={student}
-        onLogin={() => setShowLogin(true)}
+        onLogin={() => navigate('/login')}
         onLogout={handleLogout}
         profilePic={profilePic}
+        setProfilePic={setProfilePic}
       />
 
 
@@ -417,6 +432,34 @@ function App() {
         <Route
           path="/"
           element={<Home />}
+        />
+
+
+        {/* ============================= */}
+        {/* LOGIN                         */}
+        {/* ============================= */}
+
+        <Route
+          path="/login"
+          element={
+
+            isLoggedIn ? (
+
+              <Navigate
+                to="/"
+                replace
+              />
+
+            ) : (
+
+              <Login
+                onClose={() => navigate('/')}
+                onLogin={handleLogin}
+              />
+
+            )
+
+          }
         />
 
 
@@ -459,12 +502,14 @@ function App() {
         <Route
           path="/rank-predictor"
           element={
+
             <ProtectedPage
               isLoggedIn={isLoggedIn}
-              onLogin={() => setShowLogin(true)}
+              onLogin={() => navigate('/login')}
               title="Rank Predictor"
               description="Predict your expected rank using your exam performance."
             />
+
           }
         />
 
@@ -476,13 +521,17 @@ function App() {
         <Route
           path="/rank-predictor/wbjee"
           element={
+
             <ProtectedComponent
               isLoggedIn={isLoggedIn}
-              onLogin={() => setShowLogin(true)}
+              onLogin={() => navigate('/login')}
               title="WBJEE Rank Predictor"
             >
+
               <WBJEEPredictor />
+
             </ProtectedComponent>
+
           }
         />
 
@@ -494,13 +543,17 @@ function App() {
         <Route
           path="/rank-predictor/jee-main"
           element={
+
             <ProtectedComponent
               isLoggedIn={isLoggedIn}
-              onLogin={() => setShowLogin(true)}
+              onLogin={() => navigate('/login')}
               title="JEE Main Rank Predictor"
             >
+
               <JEEMainPredictor />
+
             </ProtectedComponent>
+
           }
         />
 
@@ -512,13 +565,17 @@ function App() {
         <Route
           path="/rank-predictor/neet"
           element={
+
             <ProtectedComponent
               isLoggedIn={isLoggedIn}
-              onLogin={() => setShowLogin(true)}
+              onLogin={() => navigate('/login')}
               title="NEET Rank Predictor"
             >
+
               <NEETPredictor />
+
             </ProtectedComponent>
+
           }
         />
 
@@ -530,13 +587,17 @@ function App() {
         <Route
           path="/study-materials"
           element={
+
             <ProtectedComponent
               isLoggedIn={isLoggedIn}
-              onLogin={() => setShowLogin(true)}
+              onLogin={() => navigate('/login')}
               title="Study Materials"
             >
+
               <StudyMaterials />
+
             </ProtectedComponent>
+
           }
         />
 
@@ -548,13 +609,17 @@ function App() {
         <Route
           path="/study-materials/wbjee"
           element={
+
             <ProtectedComponent
               isLoggedIn={isLoggedIn}
-              onLogin={() => setShowLogin(true)}
+              onLogin={() => navigate('/login')}
               title="WBJEE Study Materials"
             >
+
               <WBJEEMaterials />
+
             </ProtectedComponent>
+
           }
         />
 
@@ -566,13 +631,17 @@ function App() {
         <Route
           path="/study-materials/jee-main"
           element={
+
             <ProtectedComponent
               isLoggedIn={isLoggedIn}
-              onLogin={() => setShowLogin(true)}
+              onLogin={() => navigate('/login')}
               title="JEE Main Study Materials"
             >
+
               <JEEMainMaterials />
+
             </ProtectedComponent>
+
           }
         />
 
@@ -584,70 +653,83 @@ function App() {
         <Route
           path="/study-materials/neet"
           element={
+
             <ProtectedComponent
               isLoggedIn={isLoggedIn}
-              onLogin={() => setShowLogin(true)}
+              onLogin={() => navigate('/login')}
               title="NEET Study Materials"
             >
+
               <NEETMaterials />
+
             </ProtectedComponent>
+
           }
         />
 
 
         {/* ===================================== */}
         {/* COMMON PHYSICS PAGE                  */}
-        {/* WBJEE + JEE MAIN + NEET              */}
         {/* ===================================== */}
 
         <Route
           path="/study-materials/physics"
           element={
+
             <ProtectedComponent
               isLoggedIn={isLoggedIn}
-              onLogin={() => setShowLogin(true)}
+              onLogin={() => navigate('/login')}
               title="Physics"
             >
+
               <Physics />
+
             </ProtectedComponent>
+
           }
         />
 
 
         {/* ===================================== */}
         {/* COMMON CHEMISTRY PAGE                */}
-        {/* WBJEE + JEE MAIN + NEET              */}
         {/* ===================================== */}
 
         <Route
           path="/study-materials/chemistry"
           element={
+
             <ProtectedComponent
               isLoggedIn={isLoggedIn}
-              onLogin={() => setShowLogin(true)}
+              onLogin={() => navigate('/login')}
               title="Chemistry"
             >
+
               <Chemistry />
+
             </ProtectedComponent>
+
           }
         />
 
 
         {/* ===================================== */}
         {/* COMMON MATHEMATICS PAGE              */}
-        {/* WBJEE + JEE MAIN                      */}
         {/* ===================================== */}
 
         <Route
           path="/study-materials/mathematics"
           element={
+
             <ProtectedComponent
               isLoggedIn={isLoggedIn}
-              onLogin={() => setShowLogin(true)}
+              onLogin={() => navigate('/login')}
               title="Mathematics"
             >
+
               <Mathematics />
+
             </ProtectedComponent>
+
           }
         />
 
@@ -659,13 +741,17 @@ function App() {
         <Route
           path="/study-materials/biology"
           element={
+
             <ProtectedComponent
               isLoggedIn={isLoggedIn}
-              onLogin={() => setShowLogin(true)}
+              onLogin={() => navigate('/login')}
               title="Biology"
             >
+
               <Biology />
+
             </ProtectedComponent>
+
           }
         />
 
@@ -677,13 +763,17 @@ function App() {
         <Route
           path="/previous-year-questions"
           element={
+
             <ProtectedComponent
               isLoggedIn={isLoggedIn}
-              onLogin={() => setShowLogin(true)}
+              onLogin={() => navigate('/login')}
               title="Previous Year Questions"
             >
+
               <PreviousYearQuestions />
+
             </ProtectedComponent>
+
           }
         />
 
@@ -691,13 +781,17 @@ function App() {
         <Route
           path="/previous-year-questions/:exam"
           element={
+
             <ProtectedComponent
               isLoggedIn={isLoggedIn}
-              onLogin={() => setShowLogin(true)}
+              onLogin={() => navigate('/login')}
               title="Previous Year Questions"
             >
+
               <PYQExam />
+
             </ProtectedComponent>
+
           }
         />
 
@@ -709,13 +803,17 @@ function App() {
         <Route
           path="/ai-dashboard"
           element={
+
             <ProtectedComponent
               isLoggedIn={isLoggedIn}
-              onLogin={() => setShowLogin(true)}
+              onLogin={() => navigate('/login')}
               title="AI Dashboard"
             >
+
               <AIDashboard />
+
             </ProtectedComponent>
+
           }
         />
 
@@ -726,7 +824,19 @@ function App() {
 
         <Route
           path="/college-details"
-          element={<CollegeDetails />}
+          element={
+
+            <ProtectedComponent
+              isLoggedIn={isLoggedIn}
+              onLogin={() => navigate('/login')}
+              title="College Details"
+            >
+
+              <CollegeDetails />
+
+            </ProtectedComponent>
+
+          }
         />
 
 
@@ -736,7 +846,19 @@ function App() {
 
         <Route
           path="/college-details/wbjee"
-          element={<WBJEEColleges />}
+          element={
+
+            <ProtectedComponent
+              isLoggedIn={isLoggedIn}
+              onLogin={() => navigate('/login')}
+              title="WBJEE College Details"
+            >
+
+              <WBJEEColleges />
+
+            </ProtectedComponent>
+
+          }
         />
 
 
@@ -746,28 +868,66 @@ function App() {
 
         <Route
           path="/college-details/jee-main"
-          element={<JEEMainColleges />}
+          element={
+
+            <ProtectedComponent
+              isLoggedIn={isLoggedIn}
+              onLogin={() => navigate('/login')}
+              title="JEE Main College Details"
+            >
+
+              <JEEMainColleges />
+
+            </ProtectedComponent>
+
+          }
         />
 
 
-{/* ============================= */}
-{/* INDIVIDUAL COLLEGE DETAILS    */}
-{/* WBJEE + JEE MAIN              */}
-{/* ============================= */}
+        {/* ============================= */}
+        {/* INDIVIDUAL COLLEGE DETAILS    */}
+        {/* ============================= */}
 
-<Route
-  path="/college-details/:exam/:collegeId"
-  element={<CollegePage />}
-/>
+        <Route
+          path="/college-details/:exam/:collegeId"
+          element={
 
-{/* ============================= */}
-{/* NEET COLLEGE LIST             */}
-{/* ============================= */}
+            <ProtectedComponent
+              isLoggedIn={isLoggedIn}
+              onLogin={() => navigate('/login')}
+              title="College Details"
+            >
 
-<Route
-  path="/college-details/neet"
-  element={<NEETColleges />}
-/>
+              <CollegePage />
+
+            </ProtectedComponent>
+
+          }
+        />
+
+
+        {/* ============================= */}
+        {/* NEET COLLEGE LIST             */}
+        {/* ============================= */}
+
+        <Route
+          path="/college-details/neet"
+          element={
+
+            <ProtectedComponent
+              isLoggedIn={isLoggedIn}
+              onLogin={() => navigate('/login')}
+              title="NEET College Details"
+            >
+
+              <NEETColleges />
+
+            </ProtectedComponent>
+
+          }
+        />
+
+
         {/* ============================= */}
         {/* PROFILE                       */}
         {/* ============================= */}
@@ -805,32 +965,19 @@ function App() {
         <Route
           path="*"
           element={
+
             <Navigate
               to="/"
               replace
             />
+
           }
         />
 
 
       </Routes>
 
-
-      {/* ============================= */}
-      {/* LOGIN POPUP                   */}
-      {/* ============================= */}
-
-      {showLogin && (
-
-        <Login
-          onClose={() => setShowLogin(false)}
-          onLogin={handleLogin}
-        />
-
-      )}
-
-
-    </BrowserRouter>
+    </>
 
   )
 }

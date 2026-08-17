@@ -14,6 +14,8 @@ const studyMaterialsRouter =
   const aiRouter =
   require('./routes/ai')
 
+  const authRouter =
+  require('./routes/auth')
 
 // ========================================
 // MIDDLEWARE
@@ -40,6 +42,11 @@ app.use(
 app.use(
   '/api/ai',
   aiRouter
+)
+
+app.use(
+  '/api/auth',
+  authRouter
 )
 // ========================================
 // POSTGRESQL CONNECTION

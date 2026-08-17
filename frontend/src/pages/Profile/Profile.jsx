@@ -7,6 +7,15 @@ function Profile({ student, onLogout, profilePic, setProfilePic }) {
   const [imageError, setImageError] = useState('')
 
 
+  // ================================
+  // ACCOUNT-SPECIFIC PROFILE PIC KEY
+  // ================================
+
+const profilePicKey = student?.userId
+  ? `dreamCampusProfilePic_${student.userId}`
+  : null
+
+
   const handleProfilePicture = (e) => {
 
     const file = e.target.files?.[0]
@@ -24,10 +33,10 @@ function Profile({ student, onLogout, profilePic, setProfilePic }) {
 
     // Maximum 5 MB
 
-    if (file.size > 5 * 1024 * 1024) {
-      setImageError('Image size must be less than 5 MB.')
-      return
-    }
+if (file.size > 1 * 1024 * 1024) {
+  setImageError('Image size must be less than 1 MB.')
+  return
+}
 
 
     setImageError('')
@@ -35,15 +44,34 @@ function Profile({ student, onLogout, profilePic, setProfilePic }) {
 
     const reader = new FileReader()
 
-    reader.onload = () => {
+reader.onload = () => {
 
-      setProfilePic(reader.result)
+  const imageData = reader.result
+
+  if (profilePicKey) {
+    try {
 
       localStorage.setItem(
-        'dreamCampusProfilePic',
-        reader.result
+        profilePicKey,
+        imageData
       )
+
+      setProfilePic(imageData)
+
+    } catch (error) {
+
+      console.error(
+        'Unable to save profile picture:',
+        error
+      )
+
+      setImageError(
+        'Image is too large. Please choose a smaller image.'
+      )
+
     }
+  }
+} 
 
     reader.readAsDataURL(file)
   }
@@ -53,9 +81,9 @@ function Profile({ student, onLogout, profilePic, setProfilePic }) {
 
     setProfilePic(null)
 
-    localStorage.removeItem(
-      'dreamCampusProfilePic'
-    )
+    if (profilePicKey) {
+      localStorage.removeItem(profilePicKey)
+    }
   }
 
 
